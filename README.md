@@ -1,10 +1,18 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Rock Paper Scissors Lizard Spock Game by Siobhan O'Brien as part of PP2 for CI
 
-Welcome USER_NAME,
+User Stories & Acceptance Criteria
+A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer
+as per Daisy McGitt in S/W test webinar
+Format of a user story
+As a <who> I want to <what> so that I can <why>
+Acceptance Criteris - happy path is wya it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Type of tests
+unit test
+systems test - evaluate the entire application
+regression test - rerun non functional test, like when new functionality added it caused side effects and broke something else  
+consider person looking at this after u ahs no idea baout the applicaiton
 
 ## Gitpod Reminders
 
