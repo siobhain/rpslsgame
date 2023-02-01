@@ -6,11 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>RPSLS</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <script src="https://kit.fontawesome.com/4fbe7d0caf.js" crossorigin="anonymous"></script>
+    <title>RPSLS Game</title>
 </head>
 
 <body>
+    <header>
+        <h1> Rock Paper Game </h1>
+            <h2>
+                <i class="fa-regular fa-hand-back-fist"></i>
+                <i class="fa-regular fa-hand"></i>
+                <i class="fa-regular fa-hand-scissors"></i>
+                <i class="fa-regular fa-hand-lizard"></i>
+                <i class="fa-regular fa-hand-spock"></i>
+            </h2>
 
+        <!-- <i class="fa-regular fa-hand-back-fist"> Rock </i>
+        <i class="fa-regular fa-hand">Paper </i>
+        <i class="fa-regular fa-hand-scissors">Scissors </i>
+        <i class="fa-regular fa-hand-lizard">Lizard </i>
+        <i class="fa-regular fa-hand-spock">Spock </i> -->
+    </header>
+    <main>
+        <!-- <i class="fa-regular fa-hand-back-fist"></i>
+        <i class="fa-regular fa-hand"></i>
+        <i class="fa-regular fa-hand-scissors"></i>
+        <i class="fa-regular fa-hand-lizard"></i>
+        <i class="fa-regular fa-hand-spock"></i> -->
+
+        <div class="game-area">
+            <div class="choice-area">
+                <div>Click on your choice</div>
+                <button data-type="rocky">
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </button>
+                <button data-type="paper">
+                    <i class="fa-regular fa-hand"></i>
+                </button>
+                <button data-type="scissors">
+                    <i class="fa-regular fa-hand-scissors"></i>
+                </button>
+                <button data-type="lizard">
+                    <i class="fa-regular fa-hand-lizard"></i>
+                </button>
+                <button data-type="spock">
+                    <i class="fa-regular fa-hand-spock"></i>
+                </button>
+            </div>
+            <br>
+            <div class="score-area">
+                <div class="winner"> You Win/Lose as 
+                    <i class="fa-regular fa-hand"></i> covers 
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </div>
+                <br>SCORE
+                <div> <span class="user" data-type="user">You : 0</span>
+                      <span class="device" data-type="device">Me : 0</span>
+                </div>
+    </main>
 </body>
-    <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
+
 </html>

@@ -1,4 +1,26 @@
 body {
-    background: green;
+    width: min(500px, 80%);
+    background-color: lightblue;
+    text-align: center;
+    padding: 1%;
+}
 
+h1,
+h2 {
+    background-color: palegoldenrod;
+    margin: 0;
+}
+.game-area {
+    margin: 0;
+    border: 1px solid white;
+}
+.choice-area {
+    padding: 1%;
+}
+choice-area div {
+    padding-bottom: 1%;
+}
+.score-area {
+    background: paleturquoise;
+    padding: 1%;
 }
