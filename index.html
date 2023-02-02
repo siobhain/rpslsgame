@@ -14,13 +14,13 @@
 <body>
     <header>
         <h1> Rock Paper Game </h1>
-            <h2>
-                <i class="fa-regular fa-hand-back-fist"></i>
-                <i class="fa-regular fa-hand"></i>
-                <i class="fa-regular fa-hand-scissors"></i>
-                <i class="fa-regular fa-hand-lizard"></i>
-                <i class="fa-regular fa-hand-spock"></i>
-            </h2>
+        <h2>
+            <i class="fa-regular fa-hand-back-fist"></i>
+            <i class="fa-regular fa-hand"></i>
+            <i class="fa-regular fa-hand-scissors"></i>
+            <i class="fa-regular fa-hand-lizard"></i>
+            <i class="fa-regular fa-hand-spock"></i>
+        </h2>
 
         <!-- <i class="fa-regular fa-hand-back-fist"> Rock </i>
         <i class="fa-regular fa-hand">Paper </i>
@@ -36,34 +36,41 @@
         <i class="fa-regular fa-hand-spock"></i> -->
 
         <div class="game-area">
+            <div>Click on your choice</div>
             <div class="choice-area">
-                <div>Click on your choice</div>
-                <button data-type="rocky">
+                <button data-type="rock">
                     <i class="fa-regular fa-hand-back-fist"></i>
-                </button>
+                    <br>Rock</button>
                 <button data-type="paper">
                     <i class="fa-regular fa-hand"></i>
-                </button>
+                <br>Paper</button>
                 <button data-type="scissors">
                     <i class="fa-regular fa-hand-scissors"></i>
-                </button>
+                <br>Scissors</button>
                 <button data-type="lizard">
                     <i class="fa-regular fa-hand-lizard"></i>
-                </button>
+                <br>Lizard</button>
                 <button data-type="spock">
                     <i class="fa-regular fa-hand-spock"></i>
-                </button>
+                <br>Spock</button>
             </div>
-            <br>
-            <div class="score-area">
-                <div class="winner"> You Win/Lose as 
-                    <i class="fa-regular fa-hand"></i> covers 
+    
+             <div class="score-area">
+                <div class="winner">
+                    <div> <span class="user" data-type="user"></span>
+                        <span class="device" data-type="device"></span>
+                    </div>
+                </div>
+             </div>
+                <!-- <div class="score-area">
+                <div class="winner"> You Win/Lose as
+                    <i class="fa-regular fa-hand"></i> covers
                     <i class="fa-regular fa-hand-back-fist"></i>
                 </div>
                 <br>SCORE
                 <div> <span class="user" data-type="user">You : 0</span>
-                      <span class="device" data-type="device">Me : 0</span>
-                </div>
+                    <span class="device" data-type="device">Me : 0</span>
+                </div> -->
     </main>
 </body>
 <script src="assets/js/script.js"></script>
