@@ -10,7 +10,7 @@ function findWinner (userHand,deviceHand) {
 function incrementDeviceWins() {
 
 }
-function incrementScoreUserWins() {
+function incrementUserWins() {
 
 }
 function incrementDraw() {
