@@ -12,15 +12,35 @@ h2 {
 }
 .game-area {
     /* margin: 0; */
+    font-weight: 700;
     border: 1px solid white;
+    background-color: palegreen;
 }
 .choice-area {
+    weight: 700;
     background-color: lightblue;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     padding: 1%;
 }
 .score-area {
-    background: paleturquoise;
+    background-color: pink;
+    display: grid;   
+    border: 1px solid black;
+    grid-template-columns: auto auto;
     padding: 1%;
 }
+.round {
+    background-color: aqua;
+}
+.user {
+    background-color: bisque;
+}
+.draw {
+    background-color: palegoldenrod;
+}
+.me {
+    background-color: aliceblue;
+}
+
+/* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */

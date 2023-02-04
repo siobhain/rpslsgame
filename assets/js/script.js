@@ -43,31 +43,32 @@ function findWinner(userHand, deviceHand) {
     let text = "";
         switch (result) {
         case "rock paper":
-            text += "You win - rock covers paper";
+            text += "You win - Rock covers paper";
             break;
         case "rock scissors":
-            text += "You lose - rock blunted by scissors";
+            text += "You lose - Rock blunted by scissors";
             break;
         case "paper rock":
-            text += "You win -paper wraps rock";
+            text += "You win -Paper wraps rock";
             break;
         case "paper scissors":
-            text += "You lose -  paper cut by scissors";
+            text += "You lose -  Paper cut by scissors";
             break;
         case "scissors rock":
-            text += "You lose - scissors blunted by rock";
+            text += "You lose - Scissors blunted by rock";
             break;
         case "scissors paper":
-            text += "You win - scissors cuts paper";
+            text += "You win - Scissors cuts paper";
             break;
         default:
-            text += "Something went wrong ...Aborting";
+            text += "Something went wrong ...Please try again";
         }
         return(text);
         console.log(text);  
 }
 
 function incrementDeviceWins() {
+    oldScore = document.getElementById("draw")
 
 }
 
