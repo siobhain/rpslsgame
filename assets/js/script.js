@@ -1,16 +1,13 @@
 console.log("Connected");
 
-// Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
+// Once DOM is loaded add  eventlisteners to buttons waiting for a click
+
 document.addEventListener("DOMContentLoaded", function () {
     // alert("loaded");
-
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
         button.addEventListener("click", function () {
             let userHand= this.getAttribute("data-type")
-            // alert(`you pressed ${userHand}`);    
             runGame(userHand);
         })
     }
@@ -20,20 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function runGame(userHand) {
     const handArray = ["rock", "paper", "scissors"];
+    let round = 0;
     let resultText = "Empty;"
     let deviceHand = handArray[Math.floor(Math.random() * 3)];
     // userHand = handArray[Math.floor(Math.random() * 3)];
-    console.log(`device picks ${deviceHand}`);
-    console.log(`user picks ${userHand}`);
+    // console.log(`device picks ${deviceHand}`);
+    // console.log(`user picks ${userHand}`);
+
     if (deviceHand === userHand) {
-        resultText = "Its a draw ++";
-        console.log(resultText);
+        resultText = "2 x " + deviceHand +" its a draw!";
+        // console.log(resultText);
         incrementDraw();
     } else {
         resultText = findWinner(userHand, deviceHand);
     } 
+    let oldRound = parseInt(document.getElementById("round").innerText);
+    document.getElementById("round").innerText = ++oldRound;    
     document.getElementById("winorlose").innerText=resultText;
-    console.log(resultText);
+    if (oldRound > 4) {document.getElementById("roundLimit").innerHTML="Thats 5 rounds Game Over" +` <button>Play Again</button>`;}
 }
 
 function findWinner(userHand, deviceHand) {
@@ -46,25 +47,31 @@ function findWinner(userHand, deviceHand) {
     let rText = "";
         switch (result) {
         case "rock paper":
+            incrementUserWins();
             rText += "You win - Rock covers paper";
             break;
         case "rock scissors":
+            incrementDeviceWins();
             rText += "You lose - Rock blunted by scissors";
             break;
         case "paper rock":
-            rText += "You win -Paper wraps rock";
+            incrementUserWins();
+            rText += "You win - Paper wraps rock";
             break;
         case "paper scissors":
+            incrementDeviceWins();
             rText += "You lose -  Paper cut by scissors";
             break;
         case "scissors rock":
+            incrementDeviceWins();
             rText += "You lose - Scissors blunted by rock";
             break;
         case "scissors paper":
+            incrementUserWins();
             rText += "You win - Scissors cuts paper";
             break;
         default:
-            rText += "Something went wrong ...Please try again";
+            rText += "Something went wrong...Please try again";
         }
     console.log(rText);  
     return(rText);
@@ -73,14 +80,12 @@ function findWinner(userHand, deviceHand) {
 
 function incrementDeviceWins() {
     let oldScore = parseInt(document.getElementById("device").innerText);
-    document.getElementById("draw").innerText = ++oldScore;
-
+    document.getElementById("device").innerText = ++oldScore;
 }
 
 function incrementUserWins() {
     let oldScore = parseInt(document.getElementById("user").innerText);
-    document.getElementById("user").innerText = ++oldScore;
-    
+    document.getElementById("user").innerText = ++oldScore;   
 }
 
 function incrementDraw() {
