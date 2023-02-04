@@ -17,11 +17,15 @@ h2 {
     background-color: palegreen;
 }
 .choice-area {
-    weight: 700;
     background-color: lightblue;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     padding: 1%;
+}
+#winorlose {
+    padding: 1.5em;
+    font-size 2em;
+    background-color: lightsalmon;
 }
 .score-area {
     background-color: pink;
@@ -30,16 +34,16 @@ h2 {
     grid-template-columns: auto auto;
     padding: 1%;
 }
-.round {
+#round {
     background-color: aqua;
 }
-.user {
+#user {
     background-color: bisque;
 }
-.draw {
+#draw {
     background-color: palegoldenrod;
 }
-.me {
+#device {
     background-color: aliceblue;
 }
 
