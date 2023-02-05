@@ -48,27 +48,27 @@ function findWinner(userHand, deviceHand) {
         switch (result) {
         case "rock paper":
             incrementUserWins();
-            rText += "You win - Rock covers paper";
+            rText += "You lose : Rock covered by paper";
             break;
         case "rock scissors":
             incrementDeviceWins();
-            rText += "You lose - Rock blunted by scissors";
+            rText += "You win : Rock blunts scissors";
             break;
         case "paper rock":
             incrementUserWins();
-            rText += "You win - Paper wraps rock";
+            rText += "You win : Paper wraps rock";
             break;
         case "paper scissors":
             incrementDeviceWins();
-            rText += "You lose -  Paper cut by scissors";
+            rText += "You lose : Paper cut by scissors";
             break;
         case "scissors rock":
             incrementDeviceWins();
-            rText += "You lose - Scissors blunted by rock";
+            rText += "You lose : Scissors crushed by rock";
             break;
         case "scissors paper":
             incrementUserWins();
-            rText += "You win - Scissors cuts paper";
+            rText += "You win : Scissors cuts paper";
             break;
         default:
             rText += "Something went wrong...Please try again";
