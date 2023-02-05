@@ -47,12 +47,12 @@ function findWinner(userHand, deviceHand) {
     let rText = "";
         switch (result) {
         case "rock paper":
-            incrementUserWins();
+            incrementDeviceWins();
             rText += "You lose : Rock covered by paper";
             break;
         case "rock scissors":
-            incrementDeviceWins();
-            rText += "You win : Rock blunts scissors";
+            incrementUserWins();
+            rText += "You win : Rock crushes scissors";
             break;
         case "paper rock":
             incrementUserWins();
@@ -69,6 +69,58 @@ function findWinner(userHand, deviceHand) {
         case "scissors paper":
             incrementUserWins();
             rText += "You win : Scissors cuts paper";
+            break;
+        case "rock lizard" :
+            incrementUserWins();
+            rText += "You win : Rock crushes lizard";
+            break; 
+        case "rock spock" :
+            incrementDeviceWins();
+            rText += "You lose : Rock vaporized by spock";
+            break;
+        case "paper lizard" :
+            incrementDeviceWins();
+            rText += "You lose : Paper eaten by lizard";
+            break;
+        case "scissors lizard" :
+            incrementUserWins();
+            rText += "You win : Scissors decapitates lizard";
+            break;
+        case "scissors spock" :
+            incrementDeviceWins();
+            rText += "You lose : Scissors smashed by spock";
+            break;
+        case "lizard rock" :
+            incrementDeviceWins();
+            rText += "You lose : Lizard crushed by rock";
+            break;
+        case "lizard paper" :
+            incrementUserWins();
+            rText += "You win : Lizard eats paper";
+            break;
+        case "lizard scissors" :
+            incrementDeviceWins();
+            rText += "You lose : Lizard decapitated by cissors";
+            break;
+        case "lizard spock" :
+            incrementUserWins();
+            rText += "You win : Lizard poisons spock";
+            break;
+        case "spock rock" :
+            incrementUserWins();
+            rText += "You win : Spock vaporizes rock";
+            break;
+        case "spock paper" :
+            incrementDeviceWins();
+            rText += "You lose : Spock disproved by paper";
+            break;  
+        case "spock scissors" :
+            incrementUserWins();
+            rText += "You win : Spock smashes by scissors";
+            break;
+        case "spock lizard" :
+            incrementDeviceWins();
+            rText += "You lose: Spock poisoned by lizard";
             break;
         default:
             rText += "Something went wrong...Please try again";
