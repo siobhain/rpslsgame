@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function runGame(userHand) {
     const handArray = ["rock", "paper", "scissors", "lizard", "spock"];
     let round = 0;
-    let resultText = "Empty;"
+    let resultText = "";
     let deviceHand = handArray[Math.floor(Math.random() * 5)];
     // userHand = handArray[Math.floor(Math.random() * 3)];
     // console.log(`device picks ${deviceHand}`);
@@ -34,9 +34,10 @@ function runGame(userHand) {
     let oldRound = parseInt(document.getElementById("round").innerText);
     document.getElementById("round").innerText = ++oldRound;
     document.getElementById("winorlose").innerText = resultText;
-
-    if (oldRound > 4) {
-        document.getElementById("roundLimit").innerHTML = "Thats 5 Rounds Game Over " + `<button onclick=location.reload()>Play Again</button>`;
+    let rounds = parseInt(document.getElementById("rounds").value);
+    console.log(rounds);
+    if (oldRound >= rounds) {
+        document.getElementById("roundLimit").innerHTML =   `Thats ${rounds} Rounds done ` + `<button onclick=location.reload()>Play Again</button>`;
     }
 }
 
@@ -107,7 +108,7 @@ function findWinner(userHand, deviceHand) {
             break;
         case "lizard scissors":
             incrementDeviceWins();
-            rText += "You lose : Lizard decapitated by cissors";
+            rText += "You lose : Lizard decapitated by scissors";
             break;
         case "lizard spock":
             incrementUserWins();
