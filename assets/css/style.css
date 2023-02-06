@@ -1,6 +1,6 @@
 body {
     width: min(500px, 80%);
-    /* background-color: lightblue; */
+    background-color: lightblue;
     text-align: center;
     padding: 1%;
 }
@@ -25,10 +25,10 @@ h2 {
 #winorlose {
     padding: 1em;
     font-size: 1em;
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
 }
 .score-area {
-    background-color: pink;
+    /* background-color: pink; */
     display: grid;   
     border: 1px solid black;
     grid-template-columns: auto auto;
