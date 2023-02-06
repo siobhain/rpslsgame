@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            let userHand= this.getAttribute("data-type")
+            let userHand = this.getAttribute("data-type")
             runGame(userHand);
         })
     }
@@ -16,25 +16,27 @@ document.addEventListener("DOMContentLoaded", function () {
 // runGame("paper");
 
 function runGame(userHand) {
-    const handArray = ["rock", "paper", "scissors"];
+    const handArray = ["rock", "paper", "scissors", "lizard", "spock"];
     let round = 0;
     let resultText = "Empty;"
-    let deviceHand = handArray[Math.floor(Math.random() * 3)];
+    let deviceHand = handArray[Math.floor(Math.random() * 5)];
     // userHand = handArray[Math.floor(Math.random() * 3)];
-    // console.log(`device picks ${deviceHand}`);
-    // console.log(`user picks ${userHand}`);
+    console.log(`device picks ${deviceHand}`);
+    console.log(`user picks ${userHand}`);
 
     if (deviceHand === userHand) {
-        resultText = "2 x " + deviceHand +" its a draw!";
-        // console.log(resultText);
+        resultText = "2 x " + deviceHand + " its a draw!";
+        console.log(resultText);
         incrementDraw();
     } else {
         resultText = findWinner(userHand, deviceHand);
-    } 
+    }
     let oldRound = parseInt(document.getElementById("round").innerText);
-    document.getElementById("round").innerText = ++oldRound;    
-    document.getElementById("winorlose").innerText=resultText;
-    if (oldRound > 4) {document.getElementById("roundLimit").innerHTML="Thats 5 rounds Game Over" +` <button>Play Again</button>`;}
+    document.getElementById("round").innerText = ++oldRound;
+    document.getElementById("winorlose").innerText = resultText;
+    if (oldRound > 4) {
+        document.getElementById("roundLimit").innerHTML = "Thats 5 rounds Game Over" + `<button onclick=location.reload() >Play Again</button>`;
+    }
 }
 
 function findWinner(userHand, deviceHand) {
@@ -42,10 +44,10 @@ function findWinner(userHand, deviceHand) {
 
     // userLowercaseHand = toLowerCase(userHand);
     // console.log(deviceLowerHand[0]);
-   
-    let result = userHand.concat(" ",deviceHand);
+
+    let result = userHand.concat(" ", deviceHand);
     let rText = "";
-        switch (result) {
+    switch (result) {
         case "rock paper":
             incrementDeviceWins();
             rText += "You lose : Rock covered by paper";
@@ -70,65 +72,69 @@ function findWinner(userHand, deviceHand) {
             incrementUserWins();
             rText += "You win : Scissors cuts paper";
             break;
-        case "rock lizard" :
+        case "rock lizard":
             incrementUserWins();
             rText += "You win : Rock crushes lizard";
-            break; 
-        case "rock spock" :
+            break;
+        case "rock spock":
             incrementDeviceWins();
             rText += "You lose : Rock vaporized by spock";
             break;
-        case "paper lizard" :
+        case "paper lizard":
             incrementDeviceWins();
             rText += "You lose : Paper eaten by lizard";
             break;
-        case "scissors lizard" :
+        case "paper spock":
+            incrementUserWins();
+            rText += "You win : Paper disproves spock";
+            break;
+        case "scissors lizard":
             incrementUserWins();
             rText += "You win : Scissors decapitates lizard";
             break;
-        case "scissors spock" :
+        case "scissors spock":
             incrementDeviceWins();
             rText += "You lose : Scissors smashed by spock";
             break;
-        case "lizard rock" :
+        case "lizard rock":
             incrementDeviceWins();
             rText += "You lose : Lizard crushed by rock";
             break;
-        case "lizard paper" :
+        case "lizard paper":
             incrementUserWins();
             rText += "You win : Lizard eats paper";
             break;
-        case "lizard scissors" :
+        case "lizard scissors":
             incrementDeviceWins();
             rText += "You lose : Lizard decapitated by cissors";
             break;
-        case "lizard spock" :
+        case "lizard spock":
             incrementUserWins();
             rText += "You win : Lizard poisons spock";
             break;
-        case "spock rock" :
+        case "spock rock":
             incrementUserWins();
             rText += "You win : Spock vaporizes rock";
             break;
-        case "spock paper" :
+        case "spock paper":
             incrementDeviceWins();
             rText += "You lose : Spock disproved by paper";
-            break;  
-        case "spock scissors" :
+            break;
+        case "spock scissors":
             incrementUserWins();
             rText += "You win : Spock smashes by scissors";
             break;
-        case "spock lizard" :
+        case "spock lizard":
             incrementDeviceWins();
             rText += "You lose: Spock poisoned by lizard";
             break;
         default:
-            rText += "Something went wrong...Please try again";
-        }
-    console.log(rText);  
-    return(rText);
+            rText += "Something went wrong...Please try again :";
+    }
+    console.log(rText);
+    return (rText);
 }
- 
+
 
 function incrementDeviceWins() {
     let oldScore = parseInt(document.getElementById("device").innerText);
@@ -137,7 +143,7 @@ function incrementDeviceWins() {
 
 function incrementUserWins() {
     let oldScore = parseInt(document.getElementById("user").innerText);
-    document.getElementById("user").innerText = ++oldScore;   
+    document.getElementById("user").innerText = ++oldScore;
 }
 
 function incrementDraw() {
