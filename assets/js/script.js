@@ -21,8 +21,8 @@ function runGame(userHand) {
     let resultText = "Empty;"
     let deviceHand = handArray[Math.floor(Math.random() * 5)];
     // userHand = handArray[Math.floor(Math.random() * 3)];
-    console.log(`device picks ${deviceHand}`);
-    console.log(`user picks ${userHand}`);
+    // console.log(`device picks ${deviceHand}`);
+    // console.log(`user picks ${userHand}`);
 
     if (deviceHand === userHand) {
         resultText = "2 x " + deviceHand + " its a draw!";
@@ -34,8 +34,9 @@ function runGame(userHand) {
     let oldRound = parseInt(document.getElementById("round").innerText);
     document.getElementById("round").innerText = ++oldRound;
     document.getElementById("winorlose").innerText = resultText;
+
     if (oldRound > 4) {
-        document.getElementById("roundLimit").innerHTML = "Thats 5 rounds Game Over" + `<button onclick=location.reload() >Play Again</button>`;
+        document.getElementById("roundLimit").innerHTML = "Thats 5 Rounds Game Over " + `<button onclick=location.reload()>Play Again</button>`;
     }
 }
 
