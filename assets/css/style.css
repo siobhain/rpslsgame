@@ -1,6 +1,8 @@
 body {
-    width: min(500px, 80%);
-    background-color: lightblue;
+    width: min(500px, 90%);
+    background-color: #92977Eff;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     padding: 1%;
 }
@@ -10,41 +12,47 @@ h2 {
     background-color: palegoldenrod;
     margin: 0;
 }
+
 .game-area {
-    /* margin: 0; */
-    font-weight: 700;
-    border: 1px solid white;
-    background-color: palegreen;
+    padding: 1%;
+    background-color: #e6e18f;
 }
+
 .choice-area {
-    background-color: lightblue;
+    /* background-color: #e6e18f; */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     padding: 1%;
 }
+
 #winorlose {
     padding: 1em;
     font-size: 1em;
     /* background-color: lightsalmon; */
 }
+
 .score-area {
     /* background-color: pink; */
-    display: grid;   
+    display: grid;
     border: 1px solid black;
     grid-template-columns: auto auto;
     padding: 1%;
 }
+
 #round {
-    background-color: aqua;
+    background-color: palegoldenrod;
 }
+
 #user {
-    background-color: bisque;
+    background-color: palegoldenrod;
 }
+
 #draw {
     background-color: palegoldenrod;
 }
+
 #device {
-    background-color: aliceblue;
+    background-color: palegoldenrod;
 }
 
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
