@@ -14,54 +14,31 @@
 <body>
     <header>
         <h1>R P S L S Game</h1>
-        <!-- <h1>Rock Paper Scissors++ Game</h1> -->
         <h2>
-            Rock <i class="fa-regular fa-hand-back-fist"></i> Paper
-            <i class="fa-regular fa-hand"></i> Scissors
+            <span class="rock">Rock <i class="fa-regular fa-hand-back-fist"></i></span>
+            <span class="paper">Paper
+                <i class="fa-regular fa-hand"></i> </span>
+            Scissors
             <i class="fa-regular fa-hand-scissors"></i> Lizard
             <i class="fa-regular fa-hand-lizard"></i> Spock
             <i class="fa-regular fa-hand-spock"></i>
         </h2>
 
-        <!-- <i class="fa-regular fa-hand-back-fist"> Rock </i>
-        <i class="fa-regular fa-hand">Paper </i>
-        <i class="fa-regular fa-hand-scissors">Scissors </i>
-        <i class="fa-regular fa-hand-lizard">Lizard </i>
-        <i class="fa-regular fa-hand-spock">Spock </i> -->
     </header>
     <main>
-        <!-- <i class="fa-regular fa-hand-back-fist"></i>
-        <i class="fa-regular fa-hand"></i>
-        <i class="fa-regular fa-hand-scissors"></i>
-        <i class="fa-regular fa-hand-lizard"></i>
-        <i class="fa-regular fa-hand-spock"></i> -->
         <div class="control-area">
             <!-- <label for="rps">Rock Paper Scissors </label>
             <input type="radio" id="rps" name="gametoplay"><br>
             <label for="rpsls">Rock Paper Scissors Lizard Spock </label>
             <input type="radio" id="rpsls" name="gametoplay"><br>
          -->
-            <label for="rounds">How many rounds :</label>
-            <input type="number" id="rounds" name="quantity" min="1" max="9" value="5">
+            <!-- <label for="rounds">How many rounds :</label>
+            <input type="number" id="rounds" name="quantity" min="1" max="9" value="5"> -->
             <!-- <input type="submit">    -->
         </div>
 
-        <!-- <div class="rpsgame-area">
-            <div>Click on your choice</div>
-            <div class="choice-area">
-                <button data-type="rock">
-                    <i class="fa-regular fa-hand-back-fist"></i>
-                    <br>Rock</button>
-                <button data-type="paper">
-                    <i class="fa-regular fa-hand"></i>
-                    <br>Paper</button>
-                <button data-type="scissors">
-                    <i class="fa-regular fa-hand-scissors"></i>
-                    <br>Scissors</button>
-            </div> -->
-
         <div class="game-area">
-            <div>Click on your choice</div>
+            <div>Click on your choice <span><button id="myBtn">HELP</button></span></div>
             <div class="choice-area">
                 <button data-type="rock">
                     <i class="fa-regular fa-hand-back-fist"></i>
@@ -116,7 +93,142 @@
                 <div> <span class="user" data-type="user">You : 0</span>
                     <span class="device" data-type="device">Me : 0</span>
                 </div> -->
-    </main>
+        <div class="help-area">
+            <!-- <h2>Help Section</h2> -->
+
+            <!-- Trigger/Open The Modal -->
+            <!-- <button id="myBtn">HELP</button> -->
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>
+                    <h3> How to Play RPSLS</h3>
+                    You play against the device & you can start the game by clicking on one of the 5 buttons. There are
+                    3 outcomes : win lose or draw according to the Rules below.
+                    You have 5 turns in the first round after which the results are displayed. You then have an option
+                    to play again & if you wish chose how many turns to have in the next round.<br><br>
+                    <table class="icon-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Icon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            <tr>
+                                <td>Rock</td>
+                                <td><i class="fa-regular fa-hand-back-fist"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Paper </td>
+                                <td><i class="fa-regular fa-hand"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Scissors </td>
+                                <td><i class="fa-regular fa-hand-scissors"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Lizard </td>
+                                <td><i class="fa-regular fa-hand-lizard"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Spock </td>
+                                <td><i class="fa-regular fa-hand-spock"></i></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="rules-table">
+                        <thead>
+                            <tr>
+                                <th>Rules</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes lizard <i
+                                        class="fa-regular fa-hand-lizard"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes scissors <i
+                                        class="fa-regular fa-hand-scissors"></td>
+                            </tr>
+                            <tr>
+                                <td>Paper <i class="fa-regular fa-hand"></i> covers rock <i
+                                        class="fa-regular fa-hand-back-fist"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Paper <i class="fa-regular fa-hand"></i> disproves Spock <i
+                                        class="fa-regular fa-hand-spock"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Scissors <i class="fa-regular fa-hand-scissors"></i> decapitates lizard <i
+                                        class="fa-regular fa-hand-lizard"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Scissors <i class="fa-regular fa-hand-scissors"></i> cuts paper <i
+                                        class="fa-regular fa-hand"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Lizard <i class="fa-regular fa-hand-lizard"></i> poisons Spock <i
+                                        class="fa-regular fa-hand-spock"></i></td>
+                            <tr>
+                                <td>Lizard <i class="fa-regular fa-hand-lizard"></i> eats paper <i
+                                        class="fa-regular fa-hand"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Spock <i class="fa-regular fa-hand-spock"></i> smashes scissors <i
+                                        class="fa-regular fa-hand-scissors"></td>
+                            </tr>
+                            <tr>
+                                <td>Spock <i class="fa-regular fa-hand-spock"></i> vaporizes rock <i
+                                        class="fa-regular fa-hand-back-fist"></i></td>
+                            </tr>
+                            </p>
+                </div>
+
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+</body>
+
+</html>
+
+</main>
 </body>
 <script src="assets/js/script.js"></script>
 

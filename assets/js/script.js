@@ -44,7 +44,7 @@ function runGame(userHand) {
 }
 
 function findWinner(userHand, deviceHand) {
-  // const rpsData = ["Rock blunts Scissors", "Paper wraps Rock", "Scissors cuts Paper", "Rock covered by Paper", "Paper cut by Scissors", "Scissors blunted by Rock"];
+  // const rpsData = ["Rock blunts Scissors", "Paper covers Rock", "Scissors cuts Paper", "Rock covered by Paper", "Paper cut by Scissors", "Scissors blunted by Rock"];
 
   // userLowercaseHand = toLowerCase(userHand);
   // console.log(deviceLowerHand[0]);
@@ -62,7 +62,7 @@ function findWinner(userHand, deviceHand) {
       break;
     case "paper rock":
       incrementUserWins();
-      rText += "You win : Paper wraps rock";
+      rText += "You win : Paper covers rock";
       break;
     case "paper scissors":
       incrementDeviceWins();
@@ -126,7 +126,7 @@ function findWinner(userHand, deviceHand) {
       break;
     case "spock scissors":
       incrementUserWins();
-      rText += "You win : Spock smashes by scissors";
+      rText += "You win : Spock smashes scissors";
       break;
     case "spock lizard":
       incrementDeviceWins();

@@ -42,6 +42,8 @@ RPS rules & diagram courtesy of : https://en.wikipedia.org/wiki/Rock_paper_sciss
 RPSLS rules & diagram courtesy of : https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock
 
 
+How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
+
 ===============================================================================================================
 
 ## Features 
