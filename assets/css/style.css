@@ -51,7 +51,7 @@ button:hover {
 
 .score-area {
     /* background-color: pink; */
-    visibility: hidden;
+    /* visibility: hidden; */
     display: grid;
     border: 1px solid black;
     grid-template-columns: auto auto;
@@ -129,5 +129,5 @@ button:hover {
     text-align: left;
 }
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
-;
+ /* now i see they only overflow at <300 */
 /* center the icon & rules table once they go to column each */

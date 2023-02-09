@@ -8,26 +8,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get the button that opens the modal
   var helpButton = document.getElementById("helpButton");
+  // console.log(helpButton.length);
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-  alert("loaded");
-  //have few extra buttons that i need to cater for ie help button and play agan button
+  // There are 5 gameButtons & a helpButton (for modal)
+  // Add listeners to gameButtons waiting for click
+  // 
+  console.log("loaded");
+
   let buttons = document.getElementsByTagName("button");
-  console.log("buttons");
-  // alert(buttons);
+  // console.log('Number of button elements loaded : '); console.log(buttons.length);
+  console.log(`Number of button elements loaded : ${buttons.length}`);
   for (let button of buttons) {
-    console.log(button);
-    // button.addEventListener("click", function () {
-    //   let userHand = this.getAttribute("data-type");
-    //   runGame(userHand);
-   // });
+    if (button === helpButton) {  
+      // When the user clicks the helpbutton, open the modal 
+      button.addEventListener("click", function () {
+        modal.style.display = "block";
+        console.log("added helpbutton listener");
+      });
+    } else {
+      button.addEventListener("click", function () {
+        let userHand = this.getAttribute("data-type");
+        runGame(userHand);
+      });
+    }
   }
-  // When the user clicks the button, open the modal 
-  helpButton.onclick = function () {
-    modal.style.display = "block";
-  }
+
+
+  // When the user clicks the helpbutton, open the modal 
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function () {
@@ -40,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.style.display = "none";
     }
   }
-
 });
 
 // runGame("paper");
