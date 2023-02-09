@@ -17,6 +17,7 @@ h2 {
 .game-area {
     padding: 1%;
     background-color: palegoldenrod;
+    text-align: left;
 }
 
 #helpButton {
@@ -28,13 +29,17 @@ h2 {
 .choice-area {
     /* background-color: #e6e18f; */
     display: grid;
-    font-weight: 700;
     grid-template-columns: auto auto auto auto auto;
+    column-gap: 0.5em;
+    margin-top: 0.5em;
+    font-weight: 700;
     padding: 1%;
 }
-.rock{
+
+.rock {
     background-color: aqua;
 }
+
 .paper {
     background-color: bisque;
 }
@@ -77,57 +82,76 @@ button:hover {
 /* This is taken from W3Schools */
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
     /* width: 100%; Full width
     height: 100%; Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
     background-color: palegoldenrod;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 3rem;
+    ;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .icon-table {
+.icon-table {
     font-size: 2rem;
     display: inline;
     float: left;
     /* border: 2px solid black; */
-  }
-  .icon-table tr,
-  .icon-table td {
+}
+
+.icon-table tr,
+.icon-table td {
     outline: 2px solid black;
-  }
+}
+
 .rules-table {
     display: inline;
     text-align: left;
 }
+
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
- /* now i see they only overflow at <300 */
+/* now i see they only overflow at <300 */
+
+@media (max-width: 320px) {
+    
+    .choice-area {
+    column-gap: 0.2em;
+    }
+}
+
 /* center the icon & rules table once they go to column each */
