@@ -3,6 +3,7 @@ body {
     background-color: #92977Eff;
     margin-left: auto;
     margin-right: auto;
+
     text-align: center;
     padding: 1%;
 }
@@ -16,6 +17,12 @@ h2 {
 .game-area {
     padding: 1%;
     background-color: palegoldenrod;
+}
+
+#helpButton {
+    float: right;
+    background-color: #92977Eff;
+    border-radius: 3px;
 }
 
 .choice-area {
