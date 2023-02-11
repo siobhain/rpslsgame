@@ -198,6 +198,13 @@ function displayResults() {
   // let deviceWins = "";
   // let draws = "";
 
+  //disable game buttons
+  let button = document.getElementsByTagName("button");
+  console.log(button);
+  for (var i = 1; i < 6; i++) {
+    button[i].disabled=true;
+    }
+    
   let draws = parseInt(document.getElementById("draw").innerText);
   let userWins = parseInt(document.getElementById("user").innerText);
   let deviceWins = parseInt(document.getElementById("device").innerText);
@@ -214,5 +221,9 @@ function displayResults() {
 
 function playAgain() {
   console.log("in Play again function")
- 
+  let button = document.getElementsByTagName("button");
+  for (var i = 1; i < 6; i++) {
+    button[i].disabled=false;
+    }
+   
 }
