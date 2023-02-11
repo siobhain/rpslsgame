@@ -36,6 +36,7 @@ regression test - rerun non functional test, like when new functionality added i
 consider person looking at this after u ahs no idea baout the applicaiton
 
 
+No value to be gained by adding a navbar so decided not to include, I have on the advice of my mentor included a footer which contains social media icons and the line that the game is for educational purposes.
 ## CREDITS
 
 RPS rules & diagram courtesy of : https://en.wikipedia.org/wiki/Rock_paper_scissors

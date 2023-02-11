@@ -136,13 +136,37 @@ button:hover {
 
 .icon-table tr,
 .icon-table td {
-    outline: 2px solid black;
+    outline: 2px solid #000;
 }
 
 .rules-table {
     display: inline;
     text-align: left;
 }
+
+
+/* Footer */
+footer {
+    background-color: palegoldenrod;
+    text-align: center;
+}
+
+.social-media {
+    text-align: center;
+    padding: unset;
+}
+
+.social-media li {
+    display: inline;
+}
+
+.social-media i {
+    margin: 1%;
+    color: #000;
+}
+
+
+
 
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
 /* now i see they only overflow at <300 */
