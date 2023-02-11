@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // There are 5 gameButtons & a helpButton (for modal)
   // Add listeners to gameButtons waiting for click
   // 
-  console.log("loaded");
+  // console.log("loaded");
 
   let buttons = document.getElementsByTagName("button");
   // console.log('Number of button elements loaded : '); console.log(buttons.length);
   console.log(`Number of button elements loaded : ${buttons.length}`);
   for (let button of buttons) {
-    if (button === helpButton) {  
+    if (button === helpButton) {
       // When the user clicks the helpbutton, open the modal 
       button.addEventListener("click", function () {
         modal.style.display = "block";
@@ -36,10 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
-  // When the user clicks the helpbutton, open the modal 
-
-  // When the user clicks on <span> (x), close the modal
+  // Modal : When the user clicks on <span> (x), close the modal
   span.onclick = function () {
     modal.style.display = "none";
   }
@@ -54,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // runGame("paper");
 
-// the rungame fiunction des....
+// the rungame function des....
+
 function runGame(userHand) {
   const handArray = ["rock", "paper", "scissors", "lizard", "spock"];
   let resultText = "";
@@ -70,15 +68,16 @@ function runGame(userHand) {
   } else {
     resultText = findWinner(userHand, deviceHand);
   }
-  let oldRound = parseInt(document.getElementById("round").innerText);
-  document.getElementById("round").innerText = ++oldRound;
+  // Turns Section
+  // Rounds section
+
+  let oldTurn = parseInt(document.getElementById("turn").innerText);
+  document.getElementById("turn").innerText = ++oldTurn;
   document.getElementById("winorlose").innerText = resultText;
-  let rounds = parseInt(document.getElementById("rounds").value);
-  console.log(rounds);
-  if (oldRound >= rounds) {
-    document.getElementById("roundLimit").innerHTML =
-      `Thats ${rounds} Rounds done ` +
-      `<button onclick=location.reload()>Play Again</button>`;
+  // let rounds = parseInt(document.getElementById("rounds").value); hardcode round to 5 rather than ask user
+  let turns = 5;
+  if (oldTurn >= turns) { //Display results of the round
+    displayResults();
   }
 }
 
@@ -193,4 +192,27 @@ function incrementDraw() {
   document.getElementById("draw").innerText = ++oldScore;
 }
 
-function displayResult() {}
+function displayResults() {
+
+  let roundResult = "";
+  // let deviceWins = "";
+  // let draws = "";
+
+  let draws = parseInt(document.getElementById("draw").innerText);
+  let userWins = parseInt(document.getElementById("user").innerText);
+  let deviceWins = parseInt(document.getElementById("device").innerText);
+
+  if (userWins === deviceWins) {
+    roundResult = `This round is a draw ${userWins} to ${deviceWins}`
+  } else
+
+    roundResult = (deviceWins < userWins) ? `so Well Done You win this round ${userWins} to ${deviceWins}` : `but Hard Luck You lose this round ${userWins} to ${deviceWins}`;
+  document.getElementById("turnLimit").innerHTML = `Thats 5 turns played ${roundResult} <button onclick=playAgain()>Play Again</button>`;
+}
+
+//Clear counters 
+
+function playAgain() {
+  console.log("in Play again function")
+ 
+}
