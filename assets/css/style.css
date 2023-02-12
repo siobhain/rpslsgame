@@ -48,8 +48,8 @@ button:hover {
     background: #e6e18f;
 }
 
-#winorlose {
-    padding: 1em;
+#winorloseTurn {
+    padding: 1em 0;
     font-size: 1em;
     /* background-color: lightsalmon; */
 }

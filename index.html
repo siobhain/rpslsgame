@@ -27,7 +27,7 @@
     </header>
     <main>
         <div class="game-area">
-            <div><span><button id="helpButton" data-type="helpButton">Help</button><br></span data-type="clickChoice">Click on your choice</div>
+            <div><span><button id="helpButton" data-type="helpButton">Help</button><br></span data-type="clickChoice">Click on your choice, 5 turns per round</div>
             <div class="choice-area">
                 <button data-type="rock">
                     <i class="fa-regular fa-hand-back-fist"></i>
@@ -50,8 +50,8 @@
                     <br>Spock
                 </button>
             </div>
-            <div id="winorlose"></div>
-            <div id="turnLimit"></div>
+            <div id="winorloseTurn"></div>
+            <div id="roundResults"></div>
             <div class="score-area">
                 <p>
                     Turn :
@@ -200,5 +200,10 @@
 </main>
 </body>
 <script src="assets/js/script.js"></script>
+<noscript>
+    Your browser does not support JavaScript so unfortunately you cannot run this game
+  </noscript>
+</body>
+
 
 </html>
