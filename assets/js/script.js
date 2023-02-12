@@ -27,41 +27,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get the button that opens the modal
   var helpButton = document.getElementById("helpButton");
- 
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
 
   // There are 5 gameButtons & a helpButton (for rules/instructions)
   // Add listeners to gameButtons waiting for click
   //get all the buttons so we can listen for clicks
   let buttons = document.getElementsByTagName("button");
- 
+
   for (let button of buttons) {
     if (button === helpButton) {
-      button.addEventListener("click", function () {   // When helpbutton clicked, open the popup by setting display=block
+      button.addEventListener("click", function () { // When helpbutton clicked, open the popup by setting display=block
         modal.style.display = "block";
       });
     } else {
       button.addEventListener("click", function () {
-        let userHand = this.getAttribute("data-type");  // this is what fires the game when the uaer clicks onw of the gameButtons
-        runGame(userHand);// run this function when button is clicked
+        let userHand = this.getAttribute("data-type"); // this is what fires the game when the user clicks a gameButtons
+        runGame(userHand); // run this function when button is clicked
       });
     }
   }
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-
   // Modal : When the user clicks on the large X ie <span> (x), close the popup by setting display=none
   span.onclick = function () {
     modal.style.display = "none";
-  }
+  };
 
   // When the user clicks anywhere outside of the popup, close it by setting display=none
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  };
 }); //end adding listeners etc after DOMcontentLoaded
 
 
@@ -83,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function runGame(userHand) {
   let resultText = "";
- 
-  const handArray = ["rock", "paper", "scissors", "lizard", "spock"];  // create array with values for device to randomally pick one from [0] to [4]
+
+  const handArray = ["rock", "paper", "scissors", "lizard", "spock"]; // create array with values for device to randomally pick one from [0] to [4]
   let deviceHand = handArray[Math.floor(Math.random() * 5)];
 
   if (deviceHand === userHand) { // Have the picked the same hand?
@@ -95,12 +91,12 @@ function runGame(userHand) {
   }
 
   let oldTurn = parseInt(document.getElementById("turn").innerText);
-  document.getElementById("turn").innerText = ++oldTurn;  // increment before writing to dom
-  
-  document.getElementById("winorloseTurn").innerText = resultText;  //feedback turn results to user
+  document.getElementById("turn").innerText = ++oldTurn; // increment before writing to dom
+
+  document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
   let turns = 5;
-  if (oldTurn >= turns) { 
+  if (oldTurn >= turns) {
     displayResults(); //5 turns taken Display results of the round
   }
 } //end runGame
@@ -264,16 +260,17 @@ function displayResults() {
     button[i].disabled = true;
   }
 
-  let draws = parseInt(document.getElementById("draw").innerText);
   let userWins = parseInt(document.getElementById("user").innerText);
   let deviceWins = parseInt(document.getElementById("device").innerText);
 
   if (userWins === deviceWins) {
-    roundResult = `This round is a draw ${userWins} to ${deviceWins}`
+    roundResult = `This round is a draw at ${userWins} all`;
   } else {
 
+    // variable = (condition) ? expressionTrue : expressionFalse;
     roundResult = (deviceWins < userWins) ? `Well Done You win this round ${userWins} to ${deviceWins}` : `Hard Luck You lose this round ${userWins} to ${deviceWins}`;
   }
+
   // feedback roundResults to user and include button to "Play Again"
   document.getElementById("roundResults").innerHTML = `${roundResult} <button onclick=playAgain()>Play Again</button>`;
 } //end displayResults

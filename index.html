@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rock Paper Scissors Lizard Spock Game">
+    <meta name="keywords" content="Rock, Paper, Scissors, Lizard, Spock">
+    <meta name="author" content="Siobhan O Brien">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="https://kit.fontawesome.com/4fbe7d0caf.js" crossorigin="anonymous"></script>
@@ -16,19 +19,23 @@
         <h1>R P S L S Game</h1>
         <h2>
             <span class="rock">Rock <i class="fa-regular fa-hand-back-fist"></i></span>
-            <span class="paper">Paper
-                <i class="fa-regular fa-hand"></i> </span>
-            Scissors
-            <i class="fa-regular fa-hand-scissors"></i> Lizard
-            <i class="fa-regular fa-hand-lizard"></i> Spock
-            <i class="fa-regular fa-hand-spock"></i>
+            <span class="paper">Paper <i class="fa-regular fa-hand"></i></span>
+            Scissors <i class="fa-regular fa-hand-scissors"></i>
+            Lizard <i class="fa-regular fa-hand-lizard"></i>
+            Spock <i class="fa-regular fa-hand-spock"></i>
         </h2>
-
+        <!-- There is no nav bar in this game as it is only one page presentation -->
     </header>
     <main>
-        <div class="game-area">
-            <div><span><button id="helpButton" data-type="helpButton">Help</button><br></span data-type="clickChoice">Click on your choice, 5 turns per round</div>
+        <div class="game-area"> <!-- footprint for the game -->
+            <div>
+                <span>
+                    <button id="helpButton" data-type="helpButton">Help</button>
+                </span>
+                <p>Click on your choice, 5 turns per round</p>
+            </div>
             <div class="choice-area">
+                <!-- Clickable button options are presented by a fontawsome icon and name of the icon underneath -->
                 <button data-type="rock">
                     <i class="fa-regular fa-hand-back-fist"></i>
                     <br>Rock
@@ -49,66 +56,67 @@
                     <i class="fa-regular fa-hand-spock"></i>
                     <br>Spock
                 </button>
-            </div>
+            </div> <!-- Close Choice Area -->
             <div id="winorloseTurn"></div>
+            <!-- js will write the result of each turn in here from rungame function : getElementById("winorloseTurn").innerText = resultText; -->
             <div id="roundResults"></div>
+            <!-- js will write the result of the round in here from the displayResults function & present the #play Again button :getElementById("roundResults").innerHTML = `${roundResult} -->
             <div class="score-area">
                 <p>
                     Turn :
+                    <!-- There are 5 turns per round, round is finished when this counter reaches 5, it is then reset to 0-->
                     <span id="turn" data-type="turn">0</span>
 
-                    Draw :
+                    Draw : <!-- This counter keeps track of the number of draws per round -->
                     <span id="draw" data-type="draw">0 </span>
 
-                    You :
+                    You : <!-- This counter keeps track of the number of user wins per round -->
                     <span id="user" data-type="user">0 </span>
 
-                    Device :
+                    Device : <!-- This counter tracks the number of device wins per roiund -->
                     <span id="device" data-type="device">0 </span>
-
                 </p>
+            </div> <!-- close score-area -->
 
-                </p> 
-                
-            </div>
-        </div>
-        <footer>
-            <ul class="social-media">
-                <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
-                        aria-label="Visit facebook (opens in a new tab)"><i class="fab fa-facebook"></i></a>
-                </li>
-                <li><a href="https://www.twitter.com" target="_blank" rel="noopener"
-                        aria-label="Visit twitter (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
-                </li>
-                <li><a href="https://www.youtube.com" target="_blank" rel="noopener"
-                        aria-label="Visit youtube (opens in a new tab)"><i class="fab fa-youtube-square"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com" target="_blank" rel="noopener"
-                        aria-label="Visit Instagram (opens in a new tab)"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
-            <div>
-                <p>THIS GAME IS FOR EDUCATIONAL PURPOSES ONLY THERE ARE NO SOCIAL MEDIA ACCOUNTS</p>
-            </div>
-        </footer>
+            <footer>
+                <!-- footer with social media icons pointing to home pages as no social media accounts for this game -->
+                <ul class="social-media">
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener"
+                            aria-label="Visit facebook (opens in a new tab)"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://www.twitter.com" target="_blank" rel="noopener"
+                            aria-label="Visit twitter (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com" target="_blank" rel="noopener"
+                            aria-label="Visit youtube (opens in a new tab)"><i class="fab fa-youtube-square"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener"
+                            aria-label="Visit Instagram (opens in a new tab)"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+                <div>
+                    <p>THIS GAME IS FOR EDUCATIONAL PURPOSES ONLY THERE ARE NO SOCIAL MEDIA ACCOUNTS</p>
+                </div>
+            </footer>
+        </div> <!-- close game-area -->
 
         <div class="help-area">
-
-            <!-- Trigger/Open The Modal -->
-            <!-- <button id="myBtn">HELP</button> -->
-
             <!-- The Modal -->
             <div id="myModal" class="modal">
                 <!-- Modal content -->
-                <div class="modal-content">
+                <div class="help-content">
                     <span class="close">&times;</span>
+                    <!-- @times displays multiplation sign X to prompt user to close popup -->
                     <p>
                     <h3> How to Play RPSLS</h3>
-                    You play against the device & you can start the game by clicking on one of the 5 buttons. There are
+                    You play against the device & you can start the game by clicking on one of the 5 buttons. There
+                    are
                     3 outcomes : win lose or draw according to the Rules below.
-                    You have 5 turns in the first turn after which the results are displayed. You then have an option
+                    You have 5 turns in the first turn after which the results are displayed. You then have an
+                    option
                     to play again & if you wish chose how many turns to have in the next turn.<br><br>
                     <table class="icon-table">
+                        <!-- This tables displays name of the hand signal and the fontawesome icon representing it -->
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -116,8 +124,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
-
                             <tr>
                                 <td>Rock</td>
                                 <td><i class="fa-regular fa-hand-back-fist"></i></td>
@@ -142,20 +148,20 @@
                         </tbody>
                     </table>
                     <table class="rules-table">
+                        <!-- This is a list of the rules, there are 5 hand options and each hand option will beat 2 other hand options and will be beaten by the remaining 2 hand options, The fontawesome icons are included to help the user become familar with the hand icons -->
                         <thead>
                             <tr>
                                 <th>Rules</th>
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr>
                                 <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes lizard <i
                                         class="fa-regular fa-hand-lizard"></i></td>
                             </tr>
                             <tr>
                                 <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes scissors <i
-                                        class="fa-regular fa-hand-scissors"></td>
+                                        class="fa-regular fa-hand-scissors"></i></td>
                             </tr>
                             <tr>
                                 <td>Paper <i class="fa-regular fa-hand"></i> covers rock <i
@@ -182,28 +188,23 @@
                             </tr>
                             <tr>
                                 <td>Spock <i class="fa-regular fa-hand-spock"></i> smashes scissors <i
-                                        class="fa-regular fa-hand-scissors"></td>
+                                        class="fa-regular fa-hand-scissors"></i></td>
                             </tr>
                             <tr>
                                 <td>Spock <i class="fa-regular fa-hand-spock"></i> vaporizes rock <i
                                         class="fa-regular fa-hand-back-fist"></i></td>
                             </tr>
-                            </p>
-                </div>
+                        </tbody>
+                    </table>
+                </div> <!-- end class="help-content" -->
+            </div> <!-- end id="myModal" class="modal" -->
+        </div> <!-- end help-area  -->
+    </main>
 
-            </div>
-
+        <script src="assets/js/script.js"></script>
+        <noscript> <!-- Message to user in the case where javascript is not supported -->
+            Your browser does not support JavaScript so unfortunately you cannot run this game
+        </noscript>
 </body>
-
-</html>
-
-</main>
-</body>
-<script src="assets/js/script.js"></script>
-<noscript>
-    Your browser does not support JavaScript so unfortunately you cannot run this game
-  </noscript>
-</body>
-
 
 </html>

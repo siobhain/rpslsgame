@@ -1,11 +1,11 @@
 body {
-    width: min(500px, 90%);
+    width: min(500px, 90%);         /* width suitable for mobile > 320px and small tablet screens */
+    box-sizing: border-box;         /* border included in how browser calculates width and height */
     background-color: #92977Eff;
     margin-left: auto;
     margin-right: auto;
-
     text-align: center;
-    padding: 1%;
+    padding: 1%;  
 }
 
 h1,
@@ -20,14 +20,14 @@ h2 {
     text-align: left;
 }
 
-#helpButton {
+#helpButton {       /* the helpButton to appear in top right of game area */
     float: right;
     background-color: #92977Eff;
     border-radius: 3px;
+    font-size: 1.5em;
 }
 
-.choice-area {
-    /* background-color: #e6e18f; */
+.choice-area {      /* the 5 buttons auto sized according to name as size ranges from 4 letter (rock) to 8 (scissors) */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     column-gap: 0.5em;
@@ -44,17 +44,17 @@ h2 {
     background-color: bisque;
 }
 
-button:hover {
+button:hover {      /* color change on hover over a button alerts user it is clickable */
     background: #e6e18f;
 }
 
-#winorloseTurn {
+#winorloseTurn {        /* this div is empty at start of game & is filled with the turn result each turn the user clicks */
     padding: 1em 0;
     font-size: 1em;
     /* background-color: lightsalmon; */
 }
 
-.score-area {
+.score-area {       /* div empty at start and filled at end of each round of 5 turns */
     /* background-color: pink; */
     /* visibility: hidden; */
     display: grid;
@@ -62,7 +62,7 @@ button:hover {
     grid-template-columns: auto auto;
     padding: 1%;
 }
-
+/* 
 #round {
     background-color: palegoldenrod;
 }
@@ -77,33 +77,34 @@ button:hover {
 
 #device {
     background-color: palegoldenrod;
-}
+} */
 
-/* This is taken from W3Schools */
-/* The Modal (background) */
+
+/*  This .modal is taken from W3Schools 
+    It is used when helpButton is clicked and a popup modal presents the rules of the game
+    Small chamges to accomodate my game
+    the .modal div is for the modal background
+ The Modal (background) */
+
 .modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
+    display: none;    /* Hidden by default */
+    position: fixed;    /* Stay in place */
+    z-index: 1;    /* Sit on top */
+    padding-top: 100px;    /* Location of the box from the top */
+    /* left: auto;             want box centered in page */
+    /* right: auto; */
+    width: min(800px, 90%);         /* width suitable for mobile > 320px and small tablet screens */
     top: 0;
-    /* width: 100%; Full width
-    height: 100%; Full height */
     overflow: auto;
     /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     /* Black w/ opacity */
 }
 
-/* Modal Content */
-.modal-content {
+/* help Content */
+.help-content {
     background-color: palegoldenrod;
     margin: auto;
     padding: 20px;
@@ -179,3 +180,12 @@ footer {
 }
 
 /* center the icon & rules table once they go to column each */
+
+
+@media (min-width: 1000px) {  /*render game footprint little bit bigger for larger screens */
+    
+    body {
+        width: min(800px, 80%);
+    }
+}
+
