@@ -83,7 +83,7 @@ function runGame(userHand) {
   const handArray = ["rock", "paper", "scissors", "lizard", "spock"]; // create array with values for device to randomally pick one from [0] to [4]
   let deviceHand = handArray[Math.floor(Math.random() * 5)];
 
-  if (deviceHand === userHand) { // Have the picked the same hand?
+  if (deviceHand === userHand) { // Have both picked the same hand?
     resultText = "2 x " + deviceHand + "- this turn is a draw!";
     incrementDraw();
   } else {
