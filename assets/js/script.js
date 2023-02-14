@@ -1,7 +1,7 @@
 /* This js file contains the following functions
 
  runGame(userHand) : Main game loop
- findWinner(userHand, deviceHand) : switch/case to determine winner
+ findWinner(userHand, deviceHand) : 20 part switch/case to determine winner
  incrementDeviceWins() : ++device wins
  incrementUserWins() : ++user wins
  incrementDraw() : ++draw
@@ -37,27 +37,39 @@ document.addEventListener("DOMContentLoaded", function () {
     if (button === helpButton) {
       button.addEventListener("click", function () { // When helpbutton clicked, open the popup by setting display=block
         modal.style.display = "block";
+        //disable game buttons while in help modal, gameButtons are [1] to [5]
+        for (var i = 1; i < 6; i++) {
+          buttons[i].disabled = true;
+        }
       });
     } else {
       button.addEventListener("click", function () {
-        let userHand = this.getAttribute("data-type"); // this is what fires the game when the user clicks a gameButtons
-        runGame(userHand); // run this function when button is clicked
+        let userHand = this.getAttribute("data-type"); // this is what fires the game when the user clicks a gameButton
+        runGame(userHand); // run this function when any 1 of the 5 gameButtons is clicked
       });
     }
   }
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-  // Modal : When the user clicks on the large X ie <span> (x), close the popup by setting display=none
+  // Help Popup : When the user clicks on the large X ie <span> (x), close the popup by setting display=none
   span.onclick = function () {
     modal.style.display = "none";
+    //enable game buttons when exiting help popup
+    for (var i = 1; i < 6; i++) {
+      buttons[i].disabled = false;
+    }
+
   };
 
   // When the user clicks anywhere outside of the popup, close it by setting display=none
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+      for (var i = 1; i < 6; i++) {
+        buttons[i].disabled = false;
+      }
     }
-  };
+  }
 }); //end adding listeners etc after DOMcontentLoaded
 
 
@@ -95,7 +107,7 @@ function runGame(userHand) {
 
   document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
-  let turns = 5;
+  let turns = 2;
   if (oldTurn >= turns) {
     displayResults(); //5 turns taken Display results of the round
   }
@@ -258,6 +270,7 @@ function displayResults() {
   console.log(button);
   for (var i = 1; i < 6; i++) {
     button[i].disabled = true;
+    console.log(button[i]);
   }
 
   let userWins = parseInt(document.getElementById("user").innerText);
@@ -290,6 +303,7 @@ function playAgain() {
   let button = document.getElementsByTagName("button");
   for (var i = 1; i < 6; i++) {
     button[i].disabled = false;
+    console.log(button[i]);
   }
   document.getElementById("turn").innerText = "0";
   document.getElementById("winorloseTurn").innerText = "";

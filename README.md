@@ -29,6 +29,23 @@ Format of a user story
 As a <who> I want to <what> so that I can <why>
 Acceptance Criteris - happy path is wya it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
 
+As a first time user
+I want to find out about this game so I can play it
+I want to play the game so i can see if I can beat the computer
+I want to know each time i take a turn who wins the turn and what did the computer pick
+
+#
+
+As a returning user 
+I want to just get on and paly the game
+
+As an owner
+I want to make the game intresting and simple for others to play
+
+user feedback
+user 
+
+
 Type of tests
 unit test
 systems test - evaluate the entire application

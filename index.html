@@ -35,7 +35,7 @@
                 <p>Click on your choice, 5 turns per round</p>
             </div>
             <div class="choice-area">
-                <!-- Clickable button options are presented by a fontawesome icon and name of the icon underneath -->
+                <!-- Clickable gameButton options are presented by a fontawesome icon and name of the icon underneath -->
                 <button data-type="rock">
                     <i class="fa-regular fa-hand-back-fist"></i>
                     <br>Rock
@@ -58,7 +58,7 @@
                 </button>
             </div> <!-- Close Choice Area -->
             <div id="winorloseTurn"></div>
-            <!-- js will write the result of each turn in here from rungame function : getElementById("winorloseTurn").innerText = resultText; -->
+            <!-- js will write the result of each turn in here from runGame function : getElementById("winorloseTurn").innerText = resultText; -->
             <div id="roundResults"></div>
             <!-- js will write the result of the round in here from the displayResults function & present the #play Again button :getElementById("roundResults").innerHTML = `${roundResult} -->
             <div class="score-area">
@@ -105,8 +105,8 @@
             <div id="myModal" class="modal">
                 <!-- Modal content -->
                 <div class="help-content">
-                    <span class="close">&times;</span>
-                    <!-- @times displays multiplication sign X to prompt user to close popup -->
+                    <span class="close">&times</span>
+                    <!-- &times displays multiplication sign X to prompt user to close popup -->
                     <p>
                     <h3> How to Play RPSLS</h3>
                     You play against the device & you can start the game by clicking on one of the 5 buttons. There
