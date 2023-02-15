@@ -109,102 +109,108 @@
                     <!-- &times displays multiplication sign X to prompt user to close popup -->
                     <p>
                     <h3> How to Play RPSLS</h3>
-                    You play against the device & you can start the game by clicking on one of the 5 buttons. There
-                    are
-                    3 outcomes : win lose or draw according to the Rules below.
-                    You have 5 turns in the first turn after which the results are displayed. You then have an
-                    option
-                    to play again & if you wish chose how many turns to have in the next turn.<br><br>
-                    <table class="icon-table">
-                        <!-- This tables displays name of the hand signal and the fontawesome icon representing it -->
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Icon</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rock</td>
-                                <td><i class="fa-regular fa-hand-back-fist"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Paper </td>
-                                <td><i class="fa-regular fa-hand"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Scissors </td>
-                                <td><i class="fa-regular fa-hand-scissors"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Lizard </td>
-                                <td><i class="fa-regular fa-hand-lizard"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Spock </td>
-                                <td><i class="fa-regular fa-hand-spock"></i></td>
-                            </tr>
+                    <ul>
+                        <li>You play against the device & start the game by clicking on one of the 5 buttons.</li>
+                        <li>There are 3 outcomes : Win Lose or Draw according to the Rules below.</li>
+                        <li>You get a point if you win, Device gets a point if you lose, No points awarded if there is a
+                            draw.</li>
+                        <li>You get 5 turns in the first round after which the results are displayed.</li>
+                        <li>You then have the option to play again, if yes then all scores are reset to zero.</li>
+                    </ul>
+                    <div class=flex-container>
+                        <div><table class="icon-table">
+                            <!-- This tables displays name of the hand signal and the fontawesome icon representing it -->
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Icon</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rock</td>
+                                    <td><i class="fa-regular fa-hand-back-fist"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper </td>
+                                    <td><i class="fa-regular fa-hand"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Scissors </td>
+                                    <td><i class="fa-regular fa-hand-scissors"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Lizard </td>
+                                    <td><i class="fa-regular fa-hand-lizard"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Spock </td>
+                                    <td><i class="fa-regular fa-hand-spock"></i></td>
+                                </tr>
 
-                        </tbody>
-                    </table>
-                    <table class="rules-table">
-                        <!-- This is a list of the rules, there are 5 hand options and each hand option will beat 2 other hand options and will be beaten by the remaining 2 hand options, The fontawesome icons are included to help the user become familar with the hand icons -->
-                        <thead>
-                            <tr>
-                                <th>Rules</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes lizard <i
-                                        class="fa-regular fa-hand-lizard"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes scissors <i
-                                        class="fa-regular fa-hand-scissors"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Paper <i class="fa-regular fa-hand"></i> covers rock <i
-                                        class="fa-regular fa-hand-back-fist"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Paper <i class="fa-regular fa-hand"></i> disproves Spock <i
-                                        class="fa-regular fa-hand-spock"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Scissors <i class="fa-regular fa-hand-scissors"></i> decapitates lizard <i
-                                        class="fa-regular fa-hand-lizard"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Scissors <i class="fa-regular fa-hand-scissors"></i> cuts paper <i
-                                        class="fa-regular fa-hand"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Lizard <i class="fa-regular fa-hand-lizard"></i> poisons Spock <i
-                                        class="fa-regular fa-hand-spock"></i></td>
-                            <tr>
-                                <td>Lizard <i class="fa-regular fa-hand-lizard"></i> eats paper <i
-                                        class="fa-regular fa-hand"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Spock <i class="fa-regular fa-hand-spock"></i> smashes scissors <i
-                                        class="fa-regular fa-hand-scissors"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Spock <i class="fa-regular fa-hand-spock"></i> vaporizes rock <i
-                                        class="fa-regular fa-hand-back-fist"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                        </div>
+                        <!-- <div> <img src="assets/images/rpsls.jpeg" ></div> -->
+                        <div><table class="rules-table">
+                            <!-- This is a list of the rules, there are 5 hand options and each hand option will beat 2 other hand options and will be beaten by the remaining 2 hand options, The fontawesome icons are included to help the user become familar with the hand icons -->
+                            <thead>
+                                <tr>
+                                    <th>Rules</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-body">
+                                <tr>
+                                    <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes lizard <i
+                                            class="fa-regular fa-hand-lizard"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Rock <i class="fa-regular fa-hand-back-fist"></i> crushes scissors <i
+                                            class="fa-regular fa-hand-scissors"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper <i class="fa-regular fa-hand"></i> covers rock <i
+                                            class="fa-regular fa-hand-back-fist"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper <i class="fa-regular fa-hand"></i> disproves Spock <i
+                                            class="fa-regular fa-hand-spock"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Scissors <i class="fa-regular fa-hand-scissors"></i> decapitates lizard <i
+                                            class="fa-regular fa-hand-lizard"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Scissors <i class="fa-regular fa-hand-scissors"></i> cuts paper <i
+                                            class="fa-regular fa-hand"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Lizard <i class="fa-regular fa-hand-lizard"></i> poisons Spock <i
+                                            class="fa-regular fa-hand-spock"></i></td>
+                                <tr>
+                                    <td>Lizard <i class="fa-regular fa-hand-lizard"></i> eats paper <i
+                                            class="fa-regular fa-hand"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Spock <i class="fa-regular fa-hand-spock"></i> smashes scissors <i
+                                            class="fa-regular fa-hand-scissors"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Spock <i class="fa-regular fa-hand-spock"></i> vaporizes rock <i
+                                            class="fa-regular fa-hand-back-fist"></i></td>
+                                </tr>
+                            </tbody>
+                        </table></div>
+                    </div> <!-- End Flex container -->
                 </div> <!-- end class="help-content" -->
             </div> <!-- end id="myModal" class="modal" -->
         </div> <!-- end help-area  -->
     </main>
 
-        <script src="assets/js/script.js"></script>
-        <noscript> <!-- Message to user in the case where javascript is not supported -->
-            Your browser does not support JavaScript so unfortunately you cannot run this game
-        </noscript>
+    <script src="assets/js/script.js"></script>
+    <noscript> <!-- Message to user in the case where javascript is not supported -->
+        Your browser does not support JavaScript so unfortunately you cannot run this game
+    </noscript>
 </body>
 
 </html>

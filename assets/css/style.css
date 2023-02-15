@@ -1,3 +1,7 @@
+/* * {
+    outline: 1px solid #f00 !important;
+} */
+
 body {
     width: min(500px, 90%);
     /* width suitable for mobile > 320px and small tablet screens */
@@ -10,7 +14,7 @@ body {
     padding: 1%;
 }
 
-h1,
+/* h1 */
 h2 {
     background-color: palegoldenrod;
     margin: 0;
@@ -31,7 +35,7 @@ h2 {
 }
 
 .choice-area {
-    /* the 5 buttons auto sized according to name as size ranges from 4 letter (rock) to 8 (scissors) */
+    /* the 5 buttons auto sized according to name as length ranges from 4 letter (rock) to 8 (scissors) */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     column-gap: 0.5em;
@@ -41,11 +45,11 @@ h2 {
 }
 
 .rock {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .paper {
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 
 button:hover {
@@ -114,6 +118,7 @@ button:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    text-align: left;
 }
 
 /* The Close Button */
@@ -131,10 +136,25 @@ button:hover {
     cursor: pointer;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: paleturquoise;
+}
+  
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  ul {
+    padding-inline-start:   0;
+    list-style-type: decimal;
+  }
 .icon-table {
     font-size: 2rem;
-    display: inline;
-    float: left;
+  
     /* border: 2px solid black; */
 }
 
@@ -143,11 +163,19 @@ button:hover {
     outline: 2px solid #000;
 }
 
-.rules-table {
+/* .rules-table {
     display: inline;
     text-align: left;
-}
+} */
 
+#rules-body tr:nth-child(1),
+#rules-body tr:nth-child(2),
+#rules-body tr:nth-child(5),
+#rules-body tr:nth-child(6),
+#rules-body tr:nth-child(9),
+#rules-body tr:nth-child(10) {
+  background-color: lightgray;
+}
 
 /* Footer */
 footer {
@@ -186,6 +214,16 @@ footer {
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
 /* now i see they only overflow at <300 */
 
+@media (max-width: 600px) {
+    .modal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+
 @media (max-width: 320px) {
 
     .choice-area {
@@ -199,7 +237,7 @@ footer {
 @media (min-width: 1000px) {
     /*render game footprint little bit bigger for larger screens */
 
-    body {
+    body, .modal {
         width: min(800px, 80%);
     }
 }
