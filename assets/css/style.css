@@ -15,7 +15,7 @@ body {
     font-weight: 700;
 }
 
-h1, 
+h1,
 h2 {
     background-color: palegoldenrod;
     margin: 0;
@@ -41,21 +41,26 @@ h2 {
     grid-template-columns: auto auto auto auto auto;
     column-gap: 0.5em;
     margin-top: 0.5em;
-    font-weight: 700;
     padding: 1%;
 }
 
-.rock {
-    /* background-color: aqua; */
+button {
+    border-radius: 0.5em;
+    font-weight: 600;
+    padding: 1px 2px;
 }
 
-.paper {
-    /* background-color: bisque; */
+button>i {
+    font-size: 2em;
+    font-weight: 700;
+    padding-top: 10px;
 }
+
 span {
     white-space: nowrap;
     padding: 0.5%;
 }
+
 button:hover {
     /* color change on hover over a button alerts user it is clickable */
     background: #e6e18f;
@@ -111,7 +116,8 @@ button:hover {
     z-index: 1;
     /* Sit on top */
     padding-top: 100px;
-    width: min(500px, 90%); /* similar size to bosy so as to overlay game when displayed but let header be seen */
+    width: min(500px, 90%);
+    /* similar size to bosy so as to overlay game when displayed but let header be seen */
     top: 0;
     overflow: auto;
 }
@@ -146,24 +152,25 @@ button:hover {
     justify-content: space-around;
     background-color: paleturquoise;
 }
-  
-.flex-container > div {
+
+.flex-container>div {
     background-color: #f1f1f1;
     /* margin: 10px;
     padding: 20px; */
-  }
-  
-  ul {
-    padding-inline-start:   0;
+}
+
+ul {
+    padding-inline-start: 0;
     list-style-type: decimal;
-  }
+}
 
 .icon-table {
     font-size: 2rem;
     outline: 2px solid #000;
     text-align: center;
-      /* border: 2px solid black; */
+    /* border: 2px solid black; */
 }
+
 /* 
 .icon-table tr,
 .icon-table td {
@@ -182,7 +189,7 @@ button:hover {
 #rules-body tr:nth-child(6),
 #rules-body tr:nth-child(9),
 #rules-body tr:nth-child(10) {
-  background-color: lightgray;
+    background-color: lightgray;
 }
 
 /* Footer */
@@ -245,7 +252,8 @@ footer {
 @media (min-width: 1000px) {
     /*render game footprint little bit bigger for larger screens */
 
-    body, .modal {
+    body,
+    .modal {
         width: min(800px, 80%);
     }
 }
