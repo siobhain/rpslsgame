@@ -12,6 +12,7 @@ body {
     margin-right: auto;
     text-align: center;
     padding: 1%;
+    font-weight: 700;
 }
 
 h1, 
@@ -51,7 +52,10 @@ h2 {
 .paper {
     /* background-color: bisque; */
 }
-
+span {
+    white-space: nowrap;
+    padding: 0.5%;
+}
 button:hover {
     /* color change on hover over a button alerts user it is clickable */
     background: #e6e18f;
