@@ -3,31 +3,79 @@ image.png
 
 https://siobhain.github.io/rpslsgame/
 
-# Rock Paper Scissors Lizard Spock Game
-This is the github README.md file for Rock Paper Scissors Lizard Spock Game by Siobhan O'Brien as part of PP2 for CI
+# RPSLSGame
+RPSLSGame is a  Rock Paper Scissors Lizard Spock Game by Siobhan O'Brien as part of PP2 for CI
 
 #Introduction
 
 As part of PP2 for CI I chose to create a RPSLS game.  The game starts when the user clicks on one of the hand icons/buttons.  
 https://ui.dev/amiresponsive
 
+
 ##About RPS
 Rock paper scissors is a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed fist), "paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming a V).
 
 The game has three possible outcomes: a draw, a win or a loss. A player who decides to play rock will beat another player who has chosen scissors ("rock crushes scissors" or "breaks scissors" or sometimes "blunts scissors"[4]), but will lose to one who has played paper ("paper covers rock"); a play of paper will lose to a play of scissors ("scissors cuts paper"). If both players choose the same shape, the game is tied and is usually immediately replayed to break the tie. The game spread from China while developing different variants in signs over time.
 
-Rock paper scissors is often used as a fair choosing method between two people, similar to coin flipping, drawing straws, or throwing dice in order to settle a dispute or make an unbiased group decision. Unlike truly random selection methods, however, rock paper scissors can be played with a degree of skill by recognizing and exploiting non-random behavior in opponents.
+Rock paper scissors is often used as a fair choosing method between two people, similar to coin flipping, drawing straws, or throwing dice in order to settle a dispute or make an unbiased group decision. 
 
 ![RPS Diagram](docs/rps.png)
 
 ![RPSLS Diagram](docs/rpsls.jpeg)
+
+
+## CONTENTS
+
+* [User Experience](#user-experience-ux)
+  * [User Stories](#user-stories)
+
+* [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+
+* [Features](#features)
+  * [General Features on Each Page](#general-features-on-each-page)
+  * [Future Implementations](#future-implementations)
+  * [Accessibility](#accessibility)
+
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+
+* [Deployment & Local Development](#deployment--local-development)
+  * [Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)
+
+* [Testing](#testing)
+
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
+
+
+
+## UX/UI Section
+### Intention of this game, explain goal of game
+### design choices font colors
+In fact I decided for very simple lines in this game as i wanted to spend the majority of tiome and effort on the javascript side, originally I thought I would keep it very similar to Love Maths as I admired the graphics esp the 4 game buttons (+, -, *, ?) bring in circular format godd color etc.
+
+ but when 
+### wireframes 
+
+
 
 User Stories & Acceptance Criteria
 A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer
 as per Daisy McGitt in S/W test webinar
 Format of a user story
 As a <who> I want to <what> so that I can <why>
-Acceptance Criteris - happy path is wya it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
+Acceptance Criteris - happy path is way it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
 
 As a first time user
 I want to find out about this game so I can play it
@@ -64,24 +112,45 @@ How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
 
 ===============================================================================================================
 
-## Features 
+## Features should incl Name, Description, how it works, screenshot, value to the user
 
+Header, The header in H1 is shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game
+The subheader in H2
 
+how did u make favicon
 ### Existing Features
 
 - __The Footer__ 
 
-### Features Left to Implement
+### Future Features
 
 ## Testing 
+show that u ahve conducted enough test to believe that game works well
+go over features and ebsure they all work as intended
+how does project work on different brpowsers and screen sizes
 
-### Validator Testing 
+### Validator Testing
+html W3C validator
+css jigsaw
+js
+
 
 ### Unfixed Bugs
 
 ## Deployment
+
+
 ## Credits 
 
+
+
+RPS rules & diagram courtesy of : https://en.wikipedia.org/wiki/Rock_paper_scissors
+RPSLS rules & diagram courtesy of : https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock
+
+
+How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
+
+===============================================================================================================
 
 ### Content 
 
@@ -103,3 +172,47 @@ Below you will find a couple of extra tips that may be helpful when completing y
   - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
   - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
 
+
+# List of features
+# UX/UI
+# Testing
+# Deployment & Local Development
+
+### Deployment
+
+The game is deployed using GitHub Pages - 
+
+###### Steps to deploy using github pages 
+Login to Github
+Navigate to the github repo https://github.com/siobhain/rpslsgame
+In the repo, click on the Settings wheel
+Om the left hand side click on Pages 
+From the source dropdown elect the main branch and save, the game is now being deployed & may take a few minutes to eb fully loaded
+The live link can be found here - https://siobhain.github.io/rpslsgame/
+
+### Local Development
+
+##### How to fork
+
+To fork the repo
+
+Login to Github
+Navigate to the github repo https://github.com/siobhain/rpslsgame
+Click on the fork dropdown on top righthand side
+Click on the +(plus) Create a new repo
+
+##### How to clone
+
+To clone the repo
+
+Login to Github
+Navigate to the github repo https://github.com/siobhain/rpslsgame
+Click on the Code dropdown, In the Local tab Choose one of  HTTPS SSH or GitHub CLI
+Copy the link shown 
+Open the terminal in your code editor and navigate to the location you want to use for the clone
+Type git clone and paste the link/command you copied from GitHub 
+
+
+
+# Citation of ALL sources(code, images, text)
+# Future features 

@@ -136,71 +136,71 @@ function runGame(userHand) {
 function findWinner(userHand, deviceHand) {
 
   let result = userHand.concat(" ", deviceHand);
-  let rText = "";
+  let rText = "Device chose " + deviceHand;
   switch (result) {
     case "rock paper":
       incrementDeviceWins();
-      rText += "You lose this turn : Rock covered by paper";
+      rText += " You lose this turn : Rock covered by paper";
       break;
     case "rock scissors":
       incrementUserWins();
-      rText += "You win this turn : Rock crushes scissors";
+      rText += " You win this turn : Rock crushes scissors";
       break;
     case "paper rock":
       incrementUserWins();
-      rText += "You win this turn : Paper covers rock";
+      rText += " You win this turn : Paper covers rock";
       break;
     case "paper scissors":
       incrementDeviceWins();
-      rText += "You lose this turn : Paper cut by scissors";
+      rText += " You lose this turn : Paper cut by scissors";
       break;
     case "scissors rock":
       incrementDeviceWins();
-      rText += "You lose this turn : Scissors crushed by rock";
+      rText += " You lose this turn : Scissors crushed by rock";
       break;
     case "scissors paper":
       incrementUserWins();
-      rText += "You win this turn : Scissors cuts paper";
+      rText += " You win this turn : Scissors cuts paper";
       break;
     case "rock lizard":
       incrementUserWins();
-      rText += "You win this turn : Rock crushes lizard";
+      rText += " You win this turn : Rock crushes lizard";
       break;
     case "rock spock":
       incrementDeviceWins();
-      rText += "You lose this turn : Rock vaporized by spock";
+      rText += " You lose this turn : Rock vaporized by spock";
       break;
     case "paper lizard":
       incrementDeviceWins();
-      rText += "You lose this turn : Paper eaten by lizard";
+      rText += " You lose this turn : Paper eaten by lizard";
       break;
     case "paper spock":
       incrementUserWins();
-      rText += "You win this turn : Paper disproves spock";
+      rText += " You win this turn : Paper disproves spock";
       break;
     case "scissors lizard":
       incrementUserWins();
-      rText += "You win this turn : Scissors decapitates lizard";
+      rText += " You win this turn : Scissors decapitates lizard";
       break;
     case "scissors spock":
       incrementDeviceWins();
-      rText += "You lose this turn : Scissors smashed by spock";
+      rText += " You lose this turn : Scissors smashed by spock";
       break;
     case "lizard rock":
       incrementDeviceWins();
-      rText += "You lose this turn : Lizard crushed by rock";
+      rText += " You lose this turn : Lizard crushed by rock";
       break;
     case "lizard paper":
       incrementUserWins();
-      rText += "You win this turn : Lizard eats paper";
+      rText += " You win this turn : Lizard eats paper";
       break;
     case "lizard scissors":
       incrementDeviceWins();
-      rText += "You lose this turn : Lizard decapitated by scissors";
+      rText += " You lose this turn : Lizard decapitated by scissors";
       break;
     case "lizard spock":
       incrementUserWins();
-      rText += "You win this turn : Lizard poisons spock";
+      rText += " You win this turn : Lizard poisons spock";
       break;
     case "spock rock":
       incrementUserWins();
@@ -208,18 +208,18 @@ function findWinner(userHand, deviceHand) {
       break;
     case "spock paper":
       incrementDeviceWins();
-      rText += "You lose : Spock disproved by paper";
+      rText += " You lose : Spock disproved by paper";
       break;
     case "spock scissors":
       incrementUserWins();
-      rText += "You win this turn : Spock smashes scissors";
+      rText += " You win this turn : Spock smashes scissors";
       break;
     case "spock lizard":
       incrementDeviceWins();
-      rText += "You lose this turn : Spock poisoned by lizard";
+      rText += " You lose this turn : Spock poisoned by lizard";
       break;
     default:
-      rText += "Something went wrong...Please try again :";
+      rText += " Something went wrong...Please try again :";
   }
   return rText;
 } //end findWinner

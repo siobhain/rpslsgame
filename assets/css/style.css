@@ -14,7 +14,7 @@ body {
     padding: 1%;
 }
 
-/* h1 */
+h1, 
 h2 {
     background-color: palegoldenrod;
     margin: 0;
@@ -61,6 +61,7 @@ button:hover {
     /* this div is empty at start of game & is filled with the turn result each turn the user clicks */
     padding: 1em 0;
     font-size: 1em;
+    text-align: center;
     /* background-color: lightsalmon; */
 }
 
@@ -144,24 +145,27 @@ button:hover {
   
 .flex-container > div {
     background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
+    /* margin: 10px;
+    padding: 20px; */
   }
   
   ul {
     padding-inline-start:   0;
     list-style-type: decimal;
   }
+
 .icon-table {
     font-size: 2rem;
-  
-    /* border: 2px solid black; */
+    outline: 2px solid #000;
+    text-align: center;
+      /* border: 2px solid black; */
 }
-
+/* 
 .icon-table tr,
 .icon-table td {
     outline: 2px solid #000;
-}
+    text-align: center;
+} */
 
 /* .rules-table {
     display: inline;
@@ -215,7 +219,7 @@ footer {
 /* now i see they only overflow at <300 */
 
 @media (max-width: 600px) {
-    .modal {
+    .flex-container {
         flex-direction: column;
         align-items: center;
     }
