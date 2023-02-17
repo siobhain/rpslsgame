@@ -63,12 +63,26 @@ Rock paper scissors is often used as a fair choosing method between two people, 
 ## UX/UI Section
 ### Intention of this game, explain goal of game
 ### design choices font colors
-In fact I decided for very simple lines in this game as i wanted to spend the majority of tiome and effort on the javascript side, originally I thought I would keep it very similar to Love Maths as I admired the graphics esp the 4 game buttons (+, -, *, ?) bring in circular format godd color etc.
+I decided for very simple lines in this game as I wanted to spend the majority of time and effort on javascript.  I started with simple HTML and little CSS having placeholders for the data I needed to get from the DOM and data that needed to be written to the DOM.  I used gaudy colors in the development/test stage to make it easier to identify but all these will be removed before final deployment. 
 
- but when 
+I chose the google font Robtot for its clear lines and east of readability
+I chose small palette of pale colors so as not to distract user from the game
+
+Inkeeping with the simple lines I chose to use fontawesome icons for the game hand gestures as follows
+
+![RPSLS Legend](docs/rpsls-icons.PNG)
+
+I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon.
+
+![RPSLS favicon](favicon.ico)
+
+
+
+
+
+As I could not ascertain how long the javascript would take I started with the simpiler Rock Paper Scissors game with the intention to get that working before I added the Lizard & Spock. This worked out well as adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function.  Naming the functions that were needed before starting any code was also great advice by the LMS.
+
 ### wireframes 
-
-
 
 User Stories & Acceptance Criteria
 A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer
@@ -78,20 +92,20 @@ As a <who> I want to <what> so that I can <why>
 Acceptance Criteris - happy path is way it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
 
 As a first time user
-I want to find out about this game so I can play it
+I want to find out about this game so I can have a go at it
 I want to play the game so i can see if I can beat the computer
 I want to know each time i take a turn who wins the turn and what did the computer pick
 
 #
 
 As a returning user 
-I want to just get on and paly the game
+I want to just get on and play the game
 
 As an owner
 I want to make the game intresting and simple for others to play
 
 user feedback
-user 
+I want users to knwo the result at the end of each turn and end of each round.
 
 
 Type of tests
@@ -114,8 +128,31 @@ How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
 
 ## Features should incl Name, Description, how it works, screenshot, value to the user
 
-Header, The header in H1 is shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game
-The subheader in H2
+#### Game footprint
+
+RPSLS is a small game, it does not need much screen space. However, concerning the screen width, I did not want to have to use several media queries to cater for different screen widths. On mobile for example I want to make use of most of the width but once width get to approx 500px that plenty size for the game so I want to cap game width at 500px.  I used the width: min(500px, 90%).  I did succumb to one media query for 
+
+#### Header
+
+The header sectio is made up of a H1 Name & H2 tagline.  H1 contains shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game.  The subheader in H2 is considered the tag line, It contains the icon & name, both are contained in a span with {white-space: nowrap} so they are presented as a pair when the browser needs to render the H2 tagline onto 2nd/3rd line. Also made use of two &nbsp to ensure adequate separation from next/previous item.  These efforts are an attempt to get user used to the icons used for each hand gesture.
+
+
+![RPSLS Header](docs/header.PNG)
+
+#### Game Buttons
+These are the 5 hand gestures that are central to the game, below is a screenshot from desktop 
+
+![RPSLS Desktop gameButtons](docs/gameButtonsDesktop.PNG)
+
+& from a mobile 320px screen
+
+![RPSLS Mobile gameButtons](docs/gameButtonsMobile.PNG)
+
+The 5 buttons are displayed on a grid with automatic column sizes for each button, The 5 buttons fit on screen from 300px to 
+All 5 gameButtons are white background with black font detailing both the icon and the name of the hand gesture.  The icon is double the font-size (at 2em) than the name underneath. The button corners are rounded slightly with a border-radius of 0.5em. On hover the background changes to a soft yellow color (a shade darker than the game background color) & alerts the user that it can be clicked. Once the Dom is loaded js adds a 'click' eventListener to each of these ganeButtons.  
+
+
+
 
 how did u make favicon
 ### Existing Features
@@ -158,17 +195,6 @@ How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
 
 
 ## Other General Project Advice
-
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
   - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
   - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
 

@@ -33,13 +33,19 @@ body {
 
 h1,
 h2 {
-    background-color: palegoldenrod;
+    background-color: #EEE8AA;
     margin: 0;
+}
+
+span {
+    white-space: nowrap;    /* used to ensure icons and name do not get separated with line break */
+    padding: 0.5%;
 }
 
 .game-area {
     padding: 1%;
-    background-color: palegoldenrod;
+    background-color: #EEE8AA;
+    /* background-color: palegoldenrod; */
     text-align: left;
 }
 
@@ -80,11 +86,6 @@ button>i {
     padding-top: 10px;
 }
 
-span {
-    white-space: nowrap;
-    padding: 0.5%;
-}
-
 button:hover {
     /* color change on hover over a button alerts user it is clickable */
     background: #e6e18f;
@@ -108,27 +109,9 @@ button:hover {
     padding: 1%;
 }
 
-/* 
-#round {
-    background-color: palegoldenrod;
-}
-
-#user {
-    background-color: palegoldenrod;
-}
-
-#draw {
-    background-color: palegoldenrod;
-}
-
-#device {
-    background-color: palegoldenrod;
-} */
-
-
 /*  This .modal is taken from W3Schools 
     It is used when helpButton is clicked and a popup modal presents the rules of the game
-    Small chamges to accomodate my game
+    Small chamges made to accomodate this game
     the .modal div is for the modal background
  The Modal (background) */
 
@@ -143,9 +126,9 @@ button:hover {
     overflow: auto;
 }
 
-/* help Content */
+/* help Content inside the modal */
 .help-content {
-    background-color: palegoldenrod;
+    background-color: #EEE8AA;
     margin: auto;
     padding: 20px;
     width: 90%;
@@ -173,7 +156,6 @@ li {
 .close:hover,
 .close:focus {
     color: red;
-    /* text-decoration: none; */
     cursor: pointer;
 }
 
@@ -222,11 +204,12 @@ li {
 
 #rules-body tr:nth-child(even) {
     margin-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 /* Footer */
 footer {
-    background-color: palegoldenrod;
+    background-color: #EEE8AA;
     text-align: center;
 }
 
@@ -286,6 +269,6 @@ footer {
 
     body,
     .modal {
-        width: min(800px, 80%);
+        width: 800px;
     }
 }
