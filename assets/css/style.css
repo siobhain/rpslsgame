@@ -1,8 +1,23 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap'); */
+
 /* * {
     outline: 1px solid #f00 !important;
 } */
+/* Clear box model defaults*/
+
+/* * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+} */
+
 
 body {
+    font-family: 'Roboto', sans-serif;
     width: min(500px, 90%);
     /* width suitable for mobile > 320px and small tablet screens */
     box-sizing: border-box;
@@ -10,9 +25,10 @@ body {
     background-color: #92977Eff;
     margin-left: auto;
     margin-right: auto;
+    /* border: none; */
     text-align: center;
-    padding: 1%;
-    font-weight: 700;
+    padding: 0%;
+    /* font-weight: 700; */
 }
 
 h1,
@@ -34,6 +50,14 @@ h2 {
     border-radius: 3px;
     font-size: 1.5em;
 }
+
+#helpButton:hover,
+#helpButton:focus {
+    background: #e6e18f;
+    /* text-decoration: none; */
+    cursor: pointer;
+}
+
 
 .choice-area {
     /* the 5 buttons auto sized according to name as length ranges from 4 letter (rock) to 8 (scissors) */
@@ -109,15 +133,12 @@ button:hover {
  The Modal (background) */
 
 .modal {
-    display: none;
-    /* Hidden by default */
-    position: absolute;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
+    display: none;   /* Hidden by default */
+    position: absolute;    /* Stay in place */
+    z-index: 1;    /* Sit on top */
     padding-top: 100px;
     width: min(500px, 90%);
-    /* similar size to bosy so as to overlay game when displayed but let header be seen */
+    /* similar size to body so as to overlay game when displayed but let header be seen */
     top: 0;
     overflow: auto;
 }
@@ -127,11 +148,20 @@ button:hover {
     background-color: palegoldenrod;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    width: 90%;
     text-align: left;
 }
 
+/* List of instruction of How to Play in the help modal */
+ul {    
+    padding-inline-start: 0;
+    list-style-type: decimal;
+    margin-bottom: auto;
+}
+
+li {
+    margin-bottom: 1%;
+}
 /* The Close Button */
 .close {
     color: black;
@@ -150,39 +180,37 @@ button:hover {
 .flex-container {
     display: flex;
     justify-content: space-around;
-    background-color: paleturquoise;
+    background-color: #92977Eff;
+    padding: 1% 0;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
 }
 
 .flex-container>div {
     background-color: #f1f1f1;
+    padding: 1%;
+    border-radius: 3px;
     /* margin: 10px;
     padding: 20px; */
 }
 
-ul {
-    padding-inline-start: 0;
-    list-style-type: decimal;
-}
-
 .icon-table {
     font-size: 2rem;
-    outline: 2px solid #000;
-    text-align: center;
-    /* border: 2px solid black; */
+    text-align: left;
 }
 
-/* 
-.icon-table tr,
-.icon-table td {
-    outline: 2px solid #000;
-    text-align: center;
-} */
+ 
+.icon-table tr {
+   margin-bottom: 1%;
+} 
 
 /* .rules-table {
     display: inline;
     text-align: left;
 } */
 
+/* shade the rule pairs for easier reading */
 #rules-body tr:nth-child(1),
 #rules-body tr:nth-child(2),
 #rules-body tr:nth-child(5),
@@ -190,6 +218,10 @@ ul {
 #rules-body tr:nth-child(9),
 #rules-body tr:nth-child(10) {
     background-color: lightgray;
+}
+
+#rules-body tr:nth-child(even) {
+    margin-bottom: 5%;
 }
 
 /* Footer */
@@ -228,14 +260,14 @@ footer {
 
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
 /* now i see they only overflow at <300 */
-
-@media (max-width: 600px) {
-    .flex-container {
+/* 
+@media (max-width: 600px) { /* flex wrap solved thuis*/
+    /* .flex-container {
         flex-direction: column;
         align-items: center;
     }
 
-}
+} */
 
 
 
