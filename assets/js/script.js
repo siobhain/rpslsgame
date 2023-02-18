@@ -101,32 +101,14 @@ function runGame(userHand) {
   } else {
     resultText = findWinner(userHand, deviceHand);
   }
-console.log("about to scrape turn");
-// let answer = document.getElementsByClassName("score-area")[0].style.visibility;
-let answer = document.getElementsByClassName("score-area")[0];
-// var x = document.getElementById('myDIV');
-// if (x.style.visibility === 'hidden') {
-//   x.style.visibility = 'visible';
 
-// console.log(answer);
-// let x=answer.style.visibility;
-// console.log(x);
-
-if (document.getElementsByClassName("score-area")[0].style.visibility === 'hidden') {
-  console.log("hidden changing to visible");
-
-    document.getElementsByClassName("score-area")[0].style.visibility = 'visible';
-}
-let mine = document.getElementById("turn").innerText;
-console.log(mine);
-let oldTurn = parseInt(document.getElementById("turn").innerHTML);
-// let oldTurn = document.getElementById("turn").innerHTML;
-  console.log(oldTurn);
-  document.getElementById("turn").innerHTML = ++oldTurn; // increment before writing to dom
-  // document.getElementById("turn").innerHTML = oldTurn; // increment before writing to dom
-
+  /* increment score-area for this turn */
+  let oldTurn = parseInt(document.getElementById("turn").innerText);
+  document.getElementById("turn").innerText = ++oldTurn; // increment before writing to dom
+ 
   document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
+  /* Have we reached the turn limit of 5? */
   let turns = 2;
   if (oldTurn >= turns) {
     displayResults(); //5 turns taken Display results of the round
@@ -299,13 +281,12 @@ function displayResults() {
   if (userWins === deviceWins) {
     roundResult = `This round is a draw at ${userWins} all`;
   } else {
-
     // variable = (condition) ? expressionTrue : expressionFalse;
-    roundResult = (deviceWins < userWins) ? `Well Done You win this round ${userWins} to ${deviceWins}` : `Hard Luck You lose this round ${userWins} to ${deviceWins}`;
+    roundResult = (deviceWins < userWins) ? `Well Done, You win this round ${userWins} : ${deviceWins}` : `Hard Luck, You lose this round ${userWins} : ${deviceWins}`;
   }
 
   // feedback roundResults to user and include button to "Play Again"
-  document.getElementById("roundResults").innerHTML = `${roundResult} <button onclick=playAgain()>Play Again</button>`;
+  document.getElementById("roundResults").innerHTML = `${roundResult}&nbsp&nbsp <button onclick=playAgain()>Play Again</button>`;
 } //end displayResults
 
 /* function playAgain()

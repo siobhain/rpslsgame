@@ -99,15 +99,25 @@ button:hover {
     /* background-color: lightsalmon; */
 }
 
-.score-area {
-    /* div empty at start and filled at end of each round of 5 turns */
-    /* background-color: pink; */
-    /* visibility: hidden; */
-    display: grid;
-    border: 1px solid black;
-    grid-template-columns: auto auto;
+/* score-area is the scoreboard during the game, it has 4 items, Turn, Draws, User Score, Device Score */
+
+#score-area {
+    display: flex;
+    justify-content: space-around;
+    background-color: #92977Eff;
+    padding: 1% 0;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
     padding: 1%;
-    visibility: hidden;
+    /* visibility: hidden; */
+}
+
+#score-area > div {
+    text-align: center;
+    background-color: #EEE8AA;
+    padding: 1%;
+    border-radius: 0.5em;
 }
 
 /*  This .modal is taken from W3Schools 
