@@ -107,6 +107,7 @@ button:hover {
     border: 1px solid black;
     grid-template-columns: auto auto;
     padding: 1%;
+    visibility: hidden;
 }
 
 /*  This .modal is taken from W3Schools 

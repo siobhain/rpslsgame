@@ -101,9 +101,29 @@ function runGame(userHand) {
   } else {
     resultText = findWinner(userHand, deviceHand);
   }
+console.log("about to scrape turn");
+// let answer = document.getElementsByClassName("score-area")[0].style.visibility;
+let answer = document.getElementsByClassName("score-area")[0];
+// var x = document.getElementById('myDIV');
+// if (x.style.visibility === 'hidden') {
+//   x.style.visibility = 'visible';
 
-  let oldTurn = parseInt(document.getElementById("turn").innerText);
-  document.getElementById("turn").innerText = ++oldTurn; // increment before writing to dom
+// console.log(answer);
+// let x=answer.style.visibility;
+// console.log(x);
+
+if (document.getElementsByClassName("score-area")[0].style.visibility === 'hidden') {
+  console.log("hidden changing to visible");
+
+    document.getElementsByClassName("score-area")[0].style.visibility = 'visible';
+}
+let mine = document.getElementById("turn").innerText;
+console.log(mine);
+let oldTurn = parseInt(document.getElementById("turn").innerHTML);
+// let oldTurn = document.getElementById("turn").innerHTML;
+  console.log(oldTurn);
+  document.getElementById("turn").innerHTML = ++oldTurn; // increment before writing to dom
+  // document.getElementById("turn").innerHTML = oldTurn; // increment before writing to dom
 
   document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
