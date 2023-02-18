@@ -1,8 +1,4 @@
-
  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-/* @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap'); */
-
 /* * {
     outline: 1px solid #f00 !important;
 } */
@@ -18,17 +14,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    width: min(500px, 90%);
-    /* width suitable for mobile > 320px and small tablet screens */
-    box-sizing: border-box;
-    /* border included in how browser calculates width and height */
-    background-color: #92977Eff;
-    margin-left: auto;
-    margin-right: auto;
-    /* border: none; */
+    width: min(500px, 90%);    /* width suitable for mobile > 320px and small tablet screens */
+    box-sizing: border-box;    /* border included in how browser calculates width and height */
+    padding: 5vh 0 0 0;
+    margin: 0 auto;
     text-align: center;
-    padding: 0%;
-    /* font-weight: 700; */
+    background-color: #92977Eff;
 }
 
 h1,
@@ -38,19 +29,18 @@ h2 {
 }
 
 span {
-    white-space: nowrap;    /* used to ensure icons and name do not get separated with line break */
+    white-space: nowrap;    /* Tagline in header - used to ensure icons and name do not get separated with line break */
     padding: 0.5%;
 }
 
 .game-area {
     padding: 1%;
     background-color: #EEE8AA;
-    /* background-color: palegoldenrod; */
-    text-align: left;
+    text-align: center;
 }
 
+/* the helpButton to appear in top right of game area- clicking on it will fire modal */
 #helpButton {
-    /* the helpButton to appear in top right of game area */
     float: right;
     background-color: #92977Eff;
     border-radius: 3px;
@@ -60,13 +50,11 @@ span {
 #helpButton:hover,
 #helpButton:focus {
     background: #e6e18f;
-    /* text-decoration: none; */
     cursor: pointer;
 }
 
-
 .choice-area {
-    /* the 5 buttons auto sized according to name as length ranges from 4 letter (rock) to 8 (scissors) */
+    /* the 5 buttons auto sized auto - ranges from 4 letter (rock) to 8 (scissors) */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     column-gap: 0.5em;
@@ -95,9 +83,31 @@ button:hover {
     /* this div is empty at start of game & is filled with the turn result each turn the user clicks */
     padding: 1em 0;
     font-size: 1em;
-    text-align: center;
-    /* background-color: lightsalmon; */
 }
+
+#roundResults {
+    padding-bottom: 1em;
+}
+#roundResults > button {
+    font-size: 2em;
+}
+
+/* The playAgain button */
+/* #roundResults > button {
+     animation-name: helpButton-zoom;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes helpButton-zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.4);
+    }
+} */
 
 /* score-area is the scoreboard during the game, it has 4 items, Turn, Draws, User Score, Device Score */
 
@@ -117,6 +127,7 @@ button:hover {
     text-align: center;
     background-color: #EEE8AA;
     padding: 1%;
+    border: 1px dotted #000;
     border-radius: 0.5em;
 }
 
@@ -130,11 +141,10 @@ button:hover {
     display: none;   /* Hidden by default */
     position: absolute;    /* Stay in place */
     z-index: 1;    /* Sit on top */
-    padding-top: 100px;
+    padding-top: 10vh;
     width: min(500px, 90%);
     /* similar size to body so as to overlay game when displayed but let header be seen */
     top: 0;
-    overflow: auto;
 }
 
 /* help Content inside the modal */
@@ -142,7 +152,6 @@ button:hover {
     background-color: #EEE8AA;
     margin: auto;
     padding: 20px;
-    width: 90%;
     text-align: left;
 }
 
@@ -170,38 +179,30 @@ li {
     cursor: pointer;
 }
 
-.flex-container {
+.tables-container {
     display: flex;
     justify-content: space-around;
-    background-color: #92977Eff;
-    padding: 1% 0;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.5em;
+    background-color: #92977Eff;
+    padding: 1% 0;
 }
 
-.flex-container>div {
+.tables-container > div {
     background-color: #f1f1f1;
     padding: 1%;
     border-radius: 3px;
-    /* margin: 10px;
-    padding: 20px; */
 }
 
 .icon-table {
     font-size: 2rem;
     text-align: left;
 }
-
  
 .icon-table tr {
    margin-bottom: 1%;
 } 
-
-/* .rules-table {
-    display: inline;
-    text-align: left;
-} */
 
 /* shade the rule pairs for easier reading */
 #rules-body tr:nth-child(1),
@@ -213,8 +214,9 @@ li {
     background-color: lightgray;
 }
 
+/* Work on this */
+
 #rules-body tr:nth-child(even) {
-    margin-bottom: 5%;
     margin-bottom: 5%;
 }
 
@@ -250,20 +252,8 @@ footer {
     display: inline-block;
 }
 
-
-
 /* 3/2 do MQ for <375px screen, as 5 buttons overflow at < 340px */
 /* now i see they only overflow at <300 */
-/* 
-@media (max-width: 600px) { /* flex wrap solved thuis*/
-    /* .flex-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-} */
-
-
 
 @media (max-width: 320px) {
 
@@ -271,8 +261,6 @@ footer {
         column-gap: 0.2em;
     }
 }
-
-/* center the icon & rules table once they go to column each */
 
 
 @media (min-width: 1000px) {

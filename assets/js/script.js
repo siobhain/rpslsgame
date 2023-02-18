@@ -279,7 +279,7 @@ function displayResults() {
   let deviceWins = parseInt(document.getElementById("device").innerText);
 
   if (userWins === deviceWins) {
-    roundResult = `This round is a draw at ${userWins} all`;
+    roundResult = `This round is a draw at ${userWins} All`;
   } else {
     // variable = (condition) ? expressionTrue : expressionFalse;
     roundResult = (deviceWins < userWins) ? `Well Done, You win this round ${userWins} : ${deviceWins}` : `Hard Luck, You lose this round ${userWins} : ${deviceWins}`;
@@ -307,9 +307,9 @@ function playAgain() {
     console.log(button[i]);
   }
   document.getElementById("turn").innerText = "0";
-  document.getElementById("winorloseTurn").innerText = "";
+  document.getElementById("winorloseTurn").innerHTML = "<br><br>";
   document.getElementById("draw").innerText = "0";
   document.getElementById("user").innerText = "0";
   document.getElementById("device").innerText = "0";
-  document.getElementById("roundResults").innerHTML = "";
+  document.getElementById("roundResults").innerHTML = "<br><br>";
 } //end playAgain

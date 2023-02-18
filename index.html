@@ -28,13 +28,14 @@
         <!-- There is no nav bar in this game as it is only a one page game presentation -->
     </header>
     <main>
-        <div class="game-area"> <!-- footprint for the game -->
+        <section class="game-area"> <!-- footprint for the game -->
             <div>
                 <span>
                     <button id="helpButton" data-type="helpButton">Help</button>
                 </span>
                 <p>Click on your choice, 5 turns per round</p>
             </div>
+           
             <div class="choice-area">
                 <!-- Clickable gameButton options are presented by a fontawesome icon and name of the icon underneath -->
                 <button data-type="rock">
@@ -58,10 +59,12 @@
                     <br>Spock
                 </button>
             </div> <!-- Close Choice Area -->
-            <div id="winorloseTurn"></div>
+           
+            <div id="winorloseTurn"><br><br></div>
             <!-- js will write the result of each turn in here from runGame function : getElementById("winorloseTurn").innerText = resultText; -->
-            <div id="roundResults"></div>
-            <!-- js will write the result of the round in here from the displayResults function & present the #play Again button :getElementById("roundResults").innerHTML = `${roundResult} -->
+            <div id="roundResults"><br><br></div>
+            
+            <!-- js will write the result of the round in here from the displayResults function & present the playAgain button :getElementById("roundResults").innerHTML = `${roundResult} -->
             <section id="score-area">
                 <div>
                     Turn<br>
@@ -69,17 +72,17 @@
                     <span id="turn">0</span>
                 </div>
                 <div>
-                Draws<br> <!-- This counter keeps track of the number of draws per round -->
-                <span id="draw">0 </span>
-</div>
-                <div>
-
-                You<br><!-- This counter keeps track of the number of user wins per round -->
-                <span id="user">0 </span>
+                    Draws<br> <!-- This counter keeps track of the number of draws per round -->
+                    <span id="draw">0 </span>
                 </div>
                 <div>
-                Device<br> <!-- This counter tracks the number of device wins per roiund -->
-                <span id="device">0 </span>
+
+                    You<br><!-- This counter keeps track of the number of user wins per round -->
+                    <span id="user">0 </span>
+                </div>
+                <div>
+                    Device<br> <!-- This counter tracks the number of device wins per roiund -->
+                    <span id="device">0 </span>
                 </div>
             </section> <!-- close score-area -->
 
@@ -103,7 +106,7 @@
                     <p>THIS GAME IS FOR EDUCATIONAL PURPOSES ONLY THERE ARE NO SOCIAL MEDIA ACCOUNTS</p>
                 </div>
             </footer>
-        </div> <!-- close game-area -->
+        </section> <!-- close game-area -->
 
         <div class="help-area">
             <!-- The Modal -->
@@ -123,16 +126,10 @@
                         <li>You get 5 turns in the first round after which the results are displayed.</li>
                         <li>You then have the option to play again, if yes then all scores are reset to zero.</li>
                     </ul>
-                    <div class=flex-container>
+                    <div class=tables-container>
                         <div>
                             <table class="icon-table">
                                 <!-- This tables displays name of the hand signal and the fontawesome icon representing it -->
-                                <!-- <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Icon</th>
-                                </tr>
-                            </thead> -->
                                 <tbody>
                                     <tr>
                                         <td> <i class="fa-regular fa-hand-back-fist"></i></td>
@@ -158,7 +155,8 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- <div> <img src="assets/images/rpsls.jpeg" ></div> -->
+
+       
                         <div>
                             <table class="rules-table">
                                 <!-- This is a list of the rules, there are 5 hand options and each hand option will beat 2 other hand options and will be beaten by the remaining 2 hand options, The fontawesome icons are included to help the user become familar with the hand icons -->
