@@ -23,10 +23,10 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the modal
-  var modal = document.getElementById("myModal");
+  let helpModal = document.getElementById("helpModal");
 
   // Get the button that opens the modal
-  var helpButton = document.getElementById("helpButton");
+  let helpButton = document.getElementById("helpButton");
 
   // There are 5 gameButtons & a helpButton (for rules/instructions)
   // Add listeners to gameButtons waiting for click
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let button of buttons) {
     if (button === helpButton) {
       button.addEventListener("click", function () { // When helpbutton clicked, open the popup by setting display=block
-        modal.style.display = "block";
+        helpModal.style.display = "block";
         //disable game buttons while in help modal, gameButtons are [1] to [5]
         for (var i = 1; i < 6; i++) {
           buttons[i].disabled = true;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var span = document.getElementsByClassName("close")[0];
   // Help Popup : When the user clicks on the large X ie <span> (x), close the popup by setting display=none
   span.onclick = function () {
-    modal.style.display = "none";
+    helpModal.style.display = "none";
     //enable game buttons when exiting help popup
     for (var i = 1; i < 6; i++) {
       buttons[i].disabled = false;
@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // When the user clicks anywhere outside of the popup, close it by setting display=none
   window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == helpModal) {
+      helpModal.style.display = "none";
       for (var i = 1; i < 6; i++) {
         buttons[i].disabled = false;
       }

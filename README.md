@@ -73,24 +73,24 @@ I chose small palette of pale colors so as not to distract user from the game.
 
 INSERT PALETTE MOSS GREEN AND THE 2 YELLOWS BALCK AND WHITE AND ONE RED
 
-Inkeeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures
+Inkeeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures.  Here is an legend from the Help section of the game :
 
-<div style="text-align:center;">
+
+<!-- <div style="text-align:center;"> -->
 ![RPSLS Legend](docs/rpsls-icons.PNG "Legend")
-</div>
+<!-- </div> -->
 
 <img style="text-align:center;" src="docs/rpsls-icons.PNG">
 
-I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon.
+I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon. Here is the favicon : 
 
-<p style="background-color: palegoldenrod;","font-color: black">here we go
+<!-- <p style="background-color: palegoldenrod;","font-color: black">here we go -->
 ![RPSLS favicon](favicon.ico)
-</p>
+<!-- </p> -->
 
 As I could not ascertain how long the javascript would take I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function. Naming the functions that were needed before starting any code was also great advice from the LMS(Mark).
 
-Before coding I thought that the RPS game logic would be an ideal use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Initally I created the following empty functions 
-
+Before coding I thought that the RPS game logic would be an good use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Initally I created the following empty functions 
 
  * runGame
  * findWinner
@@ -99,16 +99,17 @@ Before coding I thought that the RPS game logic would be an ideal use case for S
  * incrementDraw
  * displayResults
 
-I did not know at that early stage what parameters & returns functions would use. During development I added another function 
+I did not know at that early stage what parameters (&return) each function would use. During development I added another function 
+
  * playAgain
 
-
+ The playAgain is used to give user option replay the game.
 
 #### runGame(userHand)
-This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc)It takes in the name of the game Button clicked by the user (named userHand) & does the following
+This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc) It takes in the name of the game Button clicked by the user (named userHand) & does the following
 
-  1. Randomally assign a device option named deviceHand
-  1. Compare both values  via === and if matching then its a draw
+  1. Randomly assign a device option to variable named deviceHand
+  1. Compare both values via === and if matching then its a draw
   1. Otherwise findWinner() is called to determine the winner
   1. The winner is returned from findWinner in resultText
   1. Get the nummebr of turns from the dom in a span with Id= turn 
@@ -116,22 +117,18 @@ This is the main function of the RPSLS game, It is fired whenever the user click
   1. check if it is 5th turn & if so the round is finished so call displayResults()
 
  #### findWinner(userHand, deviceHand) 
-    This function is called by runGame when user and device choices are different options It is not called if matching options are chosen (ie Rock & Rock are chosen).
+ This function is called by runGame when user and device choices are different options. It is not called if matching options are chosen (ie Rock & Rock are chosen).  Each player has 5 options so with 2 players there are 25 permutations,  subtract the 5 matching options and that leaves 20 unique options that need to be catered for in this functions switch.case statement. 
+ 
+ The function takes 2 parameters, the user chosen option (userHand) and the randomly assigned device option (deviceHand) & does the following
 
-    Each player has 5 options so with 2 players there are 25 permutations,  subtract the 5 matching options and that leaves 20 unique options that need to be catered for in this function.
-
-    The function is send user chosen option (userHand) and the randomally assigned device option (deviceHand) & doeas the following
-
-    1. Both parameters are in string format and are concatenated into one string called result
-    1. A switch statment with the 20 options is presented and js will match with the chosen result
-    1. Its either a win for the user or win for device so        appropriate increment function is called & appropriate feedback to the user is created
-     
-    The function returns the user feedback in string format
-    There is a default case to cater for problems.
+ 1. Both parameters are concatenated into one string called result
+ 1. A switch statment with the 20 options is presented and js will match with the chosen result
+ 1. Its either a win for the user or win for device so appropriate increment function is called & appropriate feedback to the user is created
+ 1. The function returns the user feedback in string format
+1.  There is a default case to cater for problems.
 
 
-
-##### incrementXXXX
+#### incrementXXXX
 There are 3 increment functions whose code is mainly taken from the Code institute Love Maths incrementScore() function.
 
  1. incrementDeviceWins
@@ -140,18 +137,16 @@ There are 3 increment functions whose code is mainly taken from the Code institu
 
  An interesting fact is that increment needs to be BEFORE the variable as javascript  will increment oldScore before writing to dom, if its oldScore++ then js writes oldScore to dom and then increments it.
 
-
-##### displayResults
+#### displayResults()
 This function is called by runGame once 5 turns have been taken
 The aim is 3 fold
     1. Let the user know the round is finished
     1. Let the user know the results of the round
     1. Give the user the option to play again
 
-It is necessary to disable the 5 gameButtons while the user decides to play again,  the results are taken from the dom & Template literals (backquotes) provide a way to interpolate 
-${result} into string for output to the div  id=roundResult
+It is necessary to disable the 5 gameButtons while the user decides to play again,  the results are taken from the dom & Template literals (backquotes) provide a way to interpolate ${result} into string for output to the div  id=roundResult.
 
-##### playAgain()
+#### playAgain()
 
 This function is fired once the user hits the "Play Again" button
 The "Play Again" button is presented to the user by displayResults() function once the round of 5 turns is finished.
@@ -160,7 +155,15 @@ This function does the following :
   1. Reset dom counters : turn, draw, user, device
   1. Reset dom text : winorloseTurn roundResults
 
+
+#### EventListeners
+Once the Dom is loaded the following are setup
+
+
+
 ### wireframes 
+
+![rpsls wireframe](docs/rpsls-wireframe.PNG)
 
 User Stories & Acceptance Criteria
 A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer

@@ -131,23 +131,21 @@ button:hover {
     border-radius: 0.5em;
 }
 
-/*  This .modal is taken from W3Schools 
+/*  This helpModal is inspired by modal example from W3Schools 
     It is used when helpButton is clicked and a popup modal presents the rules of the game
-    Small chamges made to accomodate this game
-    the .modal div is for the modal background
- The Modal (background) */
-
-.modal {
+    Some changes made to accomodate this game, the #helpModal div is the modal background
+ */
+#helpModal {
     display: none;   /* Hidden by default */
     position: absolute;    /* Stay in place */
-    z-index: 1;    /* Sit on top */
-    padding-top: 10vh;
+    z-index: 1;             /* Sit on top of game*/
+    padding-top: 10vh;      /* 5vh lower than game header so header be seen */
     width: min(500px, 90%);
-    /* similar size to body so as to overlay game when displayed but let header be seen */
+    /* similar size to body so as to overlay game when displayed */
     top: 0;
 }
 
-/* help Content inside the modal */
+/* has the help content inside the popup */
 .help-content {
     background-color: #EEE8AA;
     margin: auto;
@@ -202,22 +200,31 @@ li {
  
 .icon-table tr {
    margin-bottom: 1%;
-} 
+}
 
-/* shade the rule pairs for easier reading */
+thead {
+    font-size:  2em;
+}
+
+#rules-body tr {
+    text-align: right;
+}
+
+/* Shade & left align the rule pairs for easier reading, unfortunatley had to hardcode,  a funcwould prefer n function that selects row pairs*/
 #rules-body tr:nth-child(1),
 #rules-body tr:nth-child(2),
 #rules-body tr:nth-child(5),
 #rules-body tr:nth-child(6),
 #rules-body tr:nth-child(9),
 #rules-body tr:nth-child(10) {
-    background-color: lightgray;
+    background-color: #92977E82;
+    text-align: left;
 }
 
-/* Work on this */
+/* Every 2nd row on Rules table get more line space for legibility */
 
 #rules-body tr:nth-child(even) {
-    margin-bottom: 5%;
+    line-height:    2em;
 }
 
 /* Footer */
@@ -277,7 +284,7 @@ footer {
         padding-top: 20vh;
     }
 
-    .modal {
+    #helpModal {
         width: 800px;
         padding-top: 25vh;
     }
