@@ -262,12 +262,23 @@ footer {
     }
 }
 
+ 
+/*
+ For screen wider than 1000px
+ Render game footprint little bit bigger for larger screens by setting width to 800px 
+ Also adjust padding at top to 20% of viewport, give modal 5vh extra padding to show game heading
+
+ */
 
 @media (min-width: 1000px) {
-    /*render game footprint little bit bigger for larger screens */
 
-    body,
+    body {
+        width: 800px;
+        padding-top: 20vh;
+    }
+
     .modal {
         width: 800px;
+        padding-top: 25vh;
     }
 }

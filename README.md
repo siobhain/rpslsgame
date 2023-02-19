@@ -66,24 +66,99 @@ Rock paper scissors is often used as a fair choosing method between two people, 
 ## UX/UI Section
 ### Intention of this game, explain goal of game
 ### design choices font colors
-I decided for very simple lines in this game as I wanted to spend the majority of time and effort on javascript.  I started with simple HTML and little CSS having placeholders for the data I needed to get from the DOM and data that needed to be written to the DOM.  I used gaudy colors in the development/test stage to make it easier to identify but all these will be removed before final deployment. 
+It a pretty simple game so I decided for very simple lines in presentation of this game,  I wanted to spend the majority of time and effort on javascript (js).  I started with basic html/css layout with placeholder div/spans etc for the data js exchanges with the DOM I used gaudy colors in the development/test stage to make it easier to identify counters etc but all these removed once js finished & before final deployment. 
 
 I chose the google font Robtot for its clear lines and east of readability
-I chose small palette of pale colors so as not to distract user from the game
+I chose small palette of pale colors so as not to distract user from the game.
 
-Inkeeping with the simple lines I chose to use fontawesome icons for the game hand gestures as follows
+INSERT PALETTE MOSS GREEN AND THE 2 YELLOWS BALCK AND WHITE AND ONE RED
 
-![RPSLS Legend](docs/rpsls-icons.PNG)
+Inkeeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures
+
+<div style="text-align:center;">
+![RPSLS Legend](docs/rpsls-icons.PNG "Legend")
+</div>
+
+<img style="text-align:center;" src="docs/rpsls-icons.PNG">
 
 I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon.
 
+<p style="background-color: palegoldenrod;","font-color: black">here we go
 ![RPSLS favicon](favicon.ico)
+</p>
+
+As I could not ascertain how long the javascript would take I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function. Naming the functions that were needed before starting any code was also great advice from the LMS(Mark).
+
+Before coding I thought that the RPS game logic would be an ideal use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Initally I created the following empty functions 
+
+
+ * runGame
+ * findWinner
+ * incrementDeviceWins
+ * incrementUserWins
+ * incrementDraw
+ * displayResults
+
+I did not know at that early stage what parameters & returns functions would use. During development I added another function 
+ * playAgain
 
 
 
+#### runGame(userHand)
+This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc)It takes in the name of the game Button clicked by the user (named userHand) & does the following
+
+  1. Randomally assign a device option named deviceHand
+  1. Compare both values  via === and if matching then its a draw
+  1. Otherwise findWinner() is called to determine the winner
+  1. The winner is returned from findWinner in resultText
+  1. Get the nummebr of turns from the dom in a span with Id= turn 
+  1. increment the number of turns & write back to the Dom
+  1. check if it is 5th turn & if so the round is finished so call displayResults()
+
+ #### findWinner(userHand, deviceHand) 
+    This function is called by runGame when user and device choices are different options It is not called if matching options are chosen (ie Rock & Rock are chosen).
+
+    Each player has 5 options so with 2 players there are 25 permutations,  subtract the 5 matching options and that leaves 20 unique options that need to be catered for in this function.
+
+    The function is send user chosen option (userHand) and the randomally assigned device option (deviceHand) & doeas the following
+
+    1. Both parameters are in string format and are concatenated into one string called result
+    1. A switch statment with the 20 options is presented and js will match with the chosen result
+    1. Its either a win for the user or win for device so        appropriate increment function is called & appropriate feedback to the user is created
+     
+    The function returns the user feedback in string format
+    There is a default case to cater for problems.
 
 
-As I could not ascertain how long the javascript would take I started with the simpiler Rock Paper Scissors game with the intention to get that working before I added the Lizard & Spock. This worked out well as adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function.  Naming the functions that were needed before starting any code was also great advice by the LMS.
+
+##### incrementXXXX
+There are 3 increment functions whose code is mainly taken from the Code institute Love Maths incrementScore() function.
+
+ 1. incrementDeviceWins
+ 1. incrementUserWins
+ 1. incrementDraw
+
+ An interesting fact is that increment needs to be BEFORE the variable as javascript  will increment oldScore before writing to dom, if its oldScore++ then js writes oldScore to dom and then increments it.
+
+
+##### displayResults
+This function is called by runGame once 5 turns have been taken
+The aim is 3 fold
+    1. Let the user know the round is finished
+    1. Let the user know the results of the round
+    1. Give the user the option to play again
+
+It is necessary to disable the 5 gameButtons while the user decides to play again,  the results are taken from the dom & Template literals (backquotes) provide a way to interpolate 
+${result} into string for output to the div  id=roundResult
+
+##### playAgain()
+
+This function is fired once the user hits the "Play Again" button
+The "Play Again" button is presented to the user by displayResults() function once the round of 5 turns is finished.
+This function does the following :
+  1. re-enable the 5 Game buttons : Rock Paper Scissors Lizard & Spock
+  1. Reset dom counters : turn, draw, user, device
+  1. Reset dom text : winorloseTurn roundResults
 
 ### wireframes 
 
@@ -135,7 +210,12 @@ How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
 
 Please take game footprint to mean both the header and body sections of html, both have the same background-color of pale yellow. The area outside of the game footprint is coloured a pale moss green.
 
-RPSLS is a small game, it does not need much screen space. However, concerning the screen width, I did not want to have to use several media queries to cater for different screen widths. On mobile for example I want to make use of most of the width but once width get to approx 500px that plenty size for the game so I want to cap game width at 500px.  I used the width: min(500px, 90%).  I did succumb to one media query for screens > 1000px and increased the width to 800px.
+WIDTH
+RPSLS is a small game, it does not need much screen space. However, concerning the screen width, I did not want to have to use several media queries to cater for different screen widths. On mobile for example I want to make use of most of the width but once width get to approx 500px that plenty size for the game so I want to cap game width at 500px.  I used the width: min(500px, 90%).  I did succumb to one media query for screens > 1000px and increased the width to 800px.  
+
+POSITION
+The game is centered horizontally.I set padding at the top of the game footprint to be 5vh, which will be 5% of the viewport height, this is adequate for small screen devices but on larger screen it would be better to center the game in the screen but given time constraints I settled with 20% viewport padding (20vh) on screens wider than 1000px.
+
 
 #### Header
 
@@ -153,7 +233,9 @@ These are the 5 hand gestures that are central to the game, below is a screensho
 
 ![RPSLS Mobile gameButtons](docs/gameButtonsMobile.PNG)
 
-The 5 buttons are displayed on a grid with automatic column sizes for each button, The 5 buttons fit on screen from 300px to 
+The 5 buttons are displayed on a grid with automatic column sizes for each button, The 5 buttons fit on screen from 300px 
+
+
 All 5 gameButtons are white background with black font detailing both the icon and the name of the hand gesture.  The icon is double the font-size (at 2em) than the name underneath. The button corners are rounded slightly with a border-radius of 0.5em. On hover the background changes to a soft yellow color (a shade darker than the game background color) & alerts the user that it can be clicked. Once the Dom is loaded js adds a 'click' eventListener to each of these ganeButtons.  
 
 
@@ -165,7 +247,7 @@ how did u make favicon
 - __The Footer__ 
 
 ### Future Features
-
+center game box on screen
 ## Testing 
 show that u ahve conducted enough test to believe that game works well
 go over features and ebsure they all work as intended
@@ -179,6 +261,7 @@ js
 
 ### Unfixed Bugs
 
+wanted to hide the scoreboard at game start but could not get it wokring as get NaN when tried n ran outta time to investigate
 ## Deployment
 
 

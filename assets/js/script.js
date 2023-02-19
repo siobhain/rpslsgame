@@ -109,7 +109,7 @@ function runGame(userHand) {
   document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
   /* Have we reached the turn limit of 5? */
-  let turns = 2;
+  let turns = 5;
   if (oldTurn >= turns) {
     displayResults(); //5 turns taken Display results of the round
   }
