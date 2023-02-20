@@ -1,15 +1,16 @@
+
+# ![logo](favicon.ico) RPSLSGame
+
 ![amiresponsive](docs/amir.PNG)
 
 
-![logo](favoicon.ico)
-image.png
+The live Site : https://siobhain.github.io/rpslsgame/
 
-https://siobhain.github.io/rpslsgame/
+# ![logo](favicon.ico) RPSLSGame
 
-# RPSLSGame
-RPSLSGame is a  Rock Paper Scissors Lizard Spock Game by Siobhan O'Brien as part of PP2 for CI
+RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock Game.  This game first appeared in the TV show The big bang theory & is a variation of the Rock Paper Scissors game with the addition of 2 more hand gestures.
 
-#Introduction
+# Introduction
 
 As part of PP2 for CI I chose to create a RPSLS game.  The game starts when the user clicks on one of the hand icons/buttons.  
 https://ui.dev/amiresponsive
@@ -68,7 +69,8 @@ Rock paper scissors is often used as a fair choosing method between two people, 
 ### design choices font colors
 It a pretty simple game so I decided for very simple lines in presentation of this game,  I wanted to spend the majority of time and effort on javascript (js).  I started with basic html/css layout with placeholder div/spans etc for the data js exchanges with the DOM I used gaudy colors in the development/test stage to make it easier to identify counters etc but all these removed once js finished & before final deployment. 
 
-I chose the google font Robtot for its clear lines and east of readability
+#### Fonts Icons & Colors
+I chose the google font Roboto for its clear lines and east of readability
 I chose small palette of pale colors so as not to distract user from the game.
 
 INSERT PALETTE MOSS GREEN AND THE 2 YELLOWS BALCK AND WHITE AND ONE RED
@@ -88,6 +90,7 @@ I made a simple favicon from the Rock Paper Scissors hand gesture, I decided aga
 ![RPSLS favicon](favicon.ico)
 <!-- </p> -->
 
+#### Development Cycle
 As I could not ascertain how long the javascript would take I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function. Naming the functions that were needed before starting any code was also great advice from the LMS(Mark).
 
 Before coding I thought that the RPS game logic would be an good use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Initally I created the following empty functions 
