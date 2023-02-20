@@ -17,21 +17,18 @@
   rules/instructions) so listeners needed for these buttons.
   
   I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp
-  to display the game instructions/rules on top of the game via a helpButton
+  to help display the game instructions/rules on top of the game via a helpButton
 
 */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the modal
-  let helpModal = document.getElementById("helpModal");
 
-  // Get the button that opens the modal
-  let helpButton = document.getElementById("helpButton");
-
-  // There are 5 gameButtons & a helpButton (for rules/instructions)
-  // Add listeners to gameButtons waiting for click
   //get all the buttons so we can listen for clicks
   let buttons = document.getElementsByTagName("button");
+  // Get the helpModal
+  let helpModal = document.getElementById("helpModal");
+  // Get the helpButton that opens the modal
+  let helpButton = document.getElementById("helpButton");
 
   for (let button of buttons) {
     if (button === helpButton) {
@@ -105,7 +102,7 @@ function runGame(userHand) {
   /* increment score-area for this turn */
   let oldTurn = parseInt(document.getElementById("turn").innerText);
   document.getElementById("turn").innerText = ++oldTurn; // increment before writing to dom
- 
+
   document.getElementById("winorloseTurn").innerText = resultText; //feedback turn results to user
 
   /* Have we reached the turn limit of 5? */
@@ -269,10 +266,8 @@ function displayResults() {
 
   //disable game buttons
   let button = document.getElementsByTagName("button");
-  console.log(button);
   for (var i = 1; i < 6; i++) {
     button[i].disabled = true;
-    console.log(button[i]);
   }
 
   let userWins = parseInt(document.getElementById("user").innerText);
@@ -304,7 +299,6 @@ function playAgain() {
   let button = document.getElementsByTagName("button");
   for (var i = 1; i < 6; i++) {
     button[i].disabled = false;
-    console.log(button[i]);
   }
   document.getElementById("turn").innerText = "0";
   document.getElementById("winorloseTurn").innerHTML = "<br><br>";

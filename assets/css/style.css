@@ -90,24 +90,8 @@ button:hover {
 }
 #roundResults > button {
     font-size: 2em;
+    padding: 3px;
 }
-
-/* The playAgain button */
-/* #roundResults > button {
-     animation-name: helpButton-zoom;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes helpButton-zoom {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.4);
-    }
-} */
 
 /* score-area is the scoreboard during the game, it has 4 items, Turn, Draws, User Score, Device Score */
 

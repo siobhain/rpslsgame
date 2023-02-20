@@ -1,7 +1,7 @@
 
 # ![logo](favicon.ico) RPSLSGame
 
-![amiresponsive](docs/amir.PNG)
+![amiresponsive](docs/amir.png)
 
 
 The live Site : https://siobhain.github.io/rpslsgame/
@@ -79,10 +79,10 @@ Inkeeping with the simplicity of the game I chose to use fontawesome icons for t
 
 
 <!-- <div style="text-align:center;"> -->
-![RPSLS Legend](docs/rpsls-icons.PNG "Legend")
+![RPSLS Legend](docs/rpsls-icons.png "Legend")
 <!-- </div> -->
 
-<img style="text-align:center;" src="docs/rpsls-icons.PNG">
+<img style="text-align:center;" src="docs/rpsls-icons.png">
 
 I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon. Here is the favicon : 
 
@@ -108,65 +108,121 @@ I did not know at that early stage what parameters (&return) each function would
 
  The playAgain is used to give user option replay the game.
 
-#### runGame(userHand)
-This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc) It takes in the name of the game Button clicked by the user (named userHand) & does the following
+#### `runGame(userHand)`
+This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc) It takes in the name of the game Button clicked by the user (named `userHand`) & does the following
 
-  1. Randomly assign a device option to variable named deviceHand
-  1. Compare both values via === and if matching then its a draw
-  1. Otherwise findWinner() is called to determine the winner
-  1. The winner is returned from findWinner in resultText
-  1. Get the nummebr of turns from the dom in a span with Id= turn 
-  1. increment the number of turns & write back to the Dom
-  1. check if it is 5th turn & if so the round is finished so call displayResults()
+  1. Randomly assign a device option to variable named `deviceHand`
+  1. Compare both values via `===` and if matching then its a draw
+  1. Otherwise `findWinner()` is called to determine the winner
+  1. The winner is returned from `findWinner` in `resultText`
+  1. Get the nummebr of turns from the dom in a span with `Id= turn` 
+  1. increment the number of turns & write counter to the Dom
+  1. write turn results to `winorloseTurn` div
+  1. check if it is 5th turn & if so the round is finished so call `displayResults()`
 
- #### findWinner(userHand, deviceHand) 
- This function is called by runGame when user and device choices are different options. It is not called if matching options are chosen (ie Rock & Rock are chosen).  Each player has 5 options so with 2 players there are 25 permutations,  subtract the 5 matching options and that leaves 20 unique options that need to be catered for in this functions switch.case statement. 
+ #### `findWinner(userHand, deviceHand)` 
+ This function is called by `runGame` when user and device choices are different options. It is not called if matching options are chosen (ie Rock & Rock are chosen).  Each player has 5 options so with 2 players there are 25 permutations,  subtract the 5 matching options and that leaves 20 unique options that need to be catered for in this functions switch.case statement. 
  
- The function takes 2 parameters, the user chosen option (userHand) and the randomly assigned device option (deviceHand) & does the following
+ The function takes 2 parameters, the user chosen option `userHand` and the randomly assigned device option `deviceHand` & does the following
 
- 1. Both parameters are concatenated into one string called result
- 1. A switch statment with the 20 options is presented and js will match with the chosen result
+ 1. Both parameters are concatenated into one string called `result`
+ 1. A `switch` statment with the 20 options is presented and js will match with the chosen `result`
  1. Its either a win for the user or win for device so appropriate increment function is called & appropriate feedback to the user is created
  1. The function returns the user feedback in string format
 1.  There is a default case to cater for problems.
 
 
-#### incrementXXXX
-There are 3 increment functions whose code is mainly taken from the Code institute Love Maths incrementScore() function.
+#### `incrementXXXX`
+There are 3 increment functions whose code is mainly taken from the Code institute Love Maths `incrementScore()` function.
 
- 1. incrementDeviceWins
- 1. incrementUserWins
- 1. incrementDraw
+ 1. `incrementDeviceWins`
+ 1. `incrementUserWins`
+ 1. `incrementDraw`
 
- An interesting fact is that increment needs to be BEFORE the variable as javascript  will increment oldScore before writing to dom, if its oldScore++ then js writes oldScore to dom and then increments it.
+ An interesting fact is that increment needs to be BEFORE the variable as javascript  will increment `oldScore` before writing to dom, if its `oldScore++` then js writes oldScore to dom and then increments it!
 
-#### displayResults()
-This function is called by runGame once 5 turns have been taken
+#### `displayResults()`
+This function is called by `runGame` once 5 turns have been taken
 The aim is 3 fold
     1. Let the user know the round is finished
     1. Let the user know the results of the round
     1. Give the user the option to play again
 
-It is necessary to disable the 5 gameButtons while the user decides to play again,  the results are taken from the dom & Template literals (backquotes) provide a way to interpolate ${result} into string for output to the div  id=roundResult.
+It is necessary to disable the 5 gameButtons while the user decides to play again,  the results are taken from the dom & Template literals (backquotes) provide a way to interpolate `${result}` into string for output to the `div  id=roundResult`.
 
-#### playAgain()
+#### `playAgain()`
 
-This function is fired once the user hits the "Play Again" button
-The "Play Again" button is presented to the user by displayResults() function once the round of 5 turns is finished.
+This function is fired once the user hits the `Play Again button`
+The "Play Again" button is presented to the user by `displayResults()` function once the round of 5 turns is finished.
 This function does the following :
   1. re-enable the 5 Game buttons : Rock Paper Scissors Lizard & Spock
-  1. Reset dom counters : turn, draw, user, device
-  1. Reset dom text : winorloseTurn roundResults
+  1. Reset dom counters : `turn, draw, user, device`
+  1. Reset dom text : `winorloseTurn roundResults`
 
+
+### winorloseTurn
+
+This div is filled with 2 blank lines `<br>` on page load :
+
+    <div id="winorloseTurn"><br><br></div>
+The js function runGame writes results of a turn to this div
+    
+      document.getElementById("winorloseTurn").innerText = resultText;
+Here are some examples
+
+![win](docs/winorloseturn-win.png)
+![lose](docs/winorloseturn-lose.png)
+
+![draw](docs/winorloseturn-draw.png)
+
+
+### roundResults
+The game pkays 5 turns to a round, once all 5 truns are taken this 'roundResults' function is called by 'runGame' in order to inform the user the game is finnished and the overall winner and an option to play again.
+
+![win](docs/rounrResultswin.png)
+
+![lose](docs/roundresultslose.png)
+
+![draw](docs/roundresultsdraw.png)
+
+
+### helpButton & helpModal
+ASDFGHJKLJHGFDSASDFGHJKJHGFDS
 
 #### EventListeners
-Once the Dom is loaded the following are setup
+Once DOM is loaded add eventlisteners &/or handle specific user actions.
 
+  There are 5 gameButtons (for Rock, Paper...etc) & a helpButton (which fires popup modal for game instructions) so listeners are needed for a `click` action to each of these buttons.
+
+  All buttons are retrieved from the dom by `getElementsByTagName`
+
+    let buttons = document.getElementsByTagName("button");
+
+When any of the gameButtons are clicked the `runGame` function is invoked
+
+        button.addEventListener("click", function () {
+          let userHand = this.getAttribute("data-type");
+          runGame(userHand); 
+          }
+
+
+However there is different treatment if its the helpButton, in this case when the helpButton is clicked I want to invoke the modal by setting the `display` attribute to `block` & that along with CSS z-index=1 will ensure it appears on top of the game
+
+    if (button === helpButton) {
+      button.addEventListener("click", function () { 
+        helpModal.style.display = "block";
+       
+        for (var i = 1; i < 6; i++) {
+          buttons[i].disabled = true;
+        }
+      });
+  
+  I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp  to display the game instructions/rules on top of the game via a helpButton
 
 
 ### wireframes 
 
-![rpsls wireframe](docs/rpsls-wireframe.PNG)
+![rpsls wireframe](docs/rpsls-wireframe.png)
 
 User Stories & Acceptance Criteria
 A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer
@@ -228,16 +284,16 @@ The game is centered horizontally.I set padding at the top of the game footprint
 The header section is made up of a H1 Name & H2 tagline.  H1 contains shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game.  The subheader in H2 is considered the tag line, It contains the icon & name, both are contained in a span with {white-space: nowrap} so they are presented as a pair when the browser needs to render the H2 tagline onto 2nd/3rd line. Also made use of two &nbsp to ensure adequate separation from next/previous item.  These efforts are an attempt to get user used to the icons used for each hand gesture.
 
 
-![RPSLS Header](docs/header.PNG)
+![RPSLS Header](docs/header.png)
 
 #### Game Buttons
 These are the 5 hand gestures that are central to the game, below is a screenshot from desktop 
 
-![RPSLS Desktop gameButtons](docs/gameButtonsDesktop.PNG)
+![RPSLS Desktop gameButtons](docs/gamebuttonsdesktop.png)
 
 & from a mobile 320px screen
 
-![RPSLS Mobile gameButtons](docs/gameButtonsMobile.PNG)
+![RPSLS Mobile gameButtons](docs/gamebuttonsmobile.png)
 
 The 5 buttons are displayed on a grid with automatic column sizes for each button, The 5 buttons fit on screen from 300px 
 
