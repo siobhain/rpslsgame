@@ -3,29 +3,68 @@
 
 ![amiresponsive](docs/amir.png)
 
+Live Site : https://siobhain.github.io/rpslsgame/
 
-The live Site : https://siobhain.github.io/rpslsgame/
+# ![logo](favicon.ico) Introduction to RPSLSGame
 
-# ![logo](favicon.ico) RPSLSGame
-
-RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock Game.  This game first appeared in the TV show The big bang theory & is a variation of the Rock Paper Scissors game with the addition of 2 more hand gestures.
-
-# Introduction
-
-As part of PP2 for CI I chose to create a RPSLS game.  The game starts when the user clicks on one of the hand icons/buttons.  
-https://ui.dev/amiresponsive
+RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock Game. It is targeted at the person who needs to make a simple snap decision (like where to go for lunch) when they are probably on their own without a coin to flip. They play against the device running the game. The game starts when one of the 5 hand gestures is clicked.  The user can play just one turn or play a round of 5 turns and will be advised of win lose or draw at the end of each turn and round. Here is a screenshot of the home page
 
 
-##About RPS
-Rock paper scissors is a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed fist), "paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming a V).
+![RPSLSGame homepage](docs/homepage.png)
 
-The game has three possible outcomes: a draw, a win or a loss. A player who decides to play rock will beat another player who has chosen scissors ("rock crushes scissors" or "breaks scissors" or sometimes "blunts scissors"[4]), but will lose to one who has played paper ("paper covers rock"); a play of paper will lose to a play of scissors ("scissors cuts paper"). If both players choose the same shape, the game is tied and is usually immediately replayed to break the tie. The game spread from China while developing different variants in signs over time.
+ The game may also interest people who are starting to learn javascript and want to see how it can manipulate the DOM. 
 
-Rock paper scissors is often used as a fair choosing method between two people, similar to coin flipping, drawing straws, or throwing dice in order to settle a dispute or make an unbiased group decision. 
+---
+***
+## Background Information
+This section contains information about these two hand gesture games in case you have not come across them
+
+### Rock Paper Scissors
+In this hand gesture game of chance each player will simultaneously form one of 3 shapes with their hand which are either -
+
+* a closed fist - **Rock**
+* a flat hand - **Paper**
+* a fist with index and middle finger extended forming a V shape - **Scissors**
+
+The game has three possible outcomes: win lose or draw according to this triangular diagram :
 
 ![RPS Diagram](docs/rps.png)
 
+### Rock Paper Scissors Lizard Spock
+
+This game first appeared in the American TV show The big bang theory & is a variation of the Rock Paper Scissors game with the addition of 2 more hand gestures - yep you have guessed it Lizard & Spock
+
+* flat hand with middle and ring fingers parted - **Spock**
+* form the hand into a sockpuppet-like mouth - **Lizard**
+
+
+Again the game has three possible outcomes:  win lose or draw according to this slightly mnore complicated triangular diagram below :
+
 ![RPSLS Diagram](docs/rpsls.jpeg)
+---
+***
+
+
+* [User Experience](#user-experience-ux)
+  * [User Stories](#user-stories)
+  
+
+As a first time user
+1. I want to find out about this game so I can have a go at it
+1. I want to play the game so I can see if I can beat the computer
+1. I want to know each time I take a turn who wins the turn and what did the computer pick
+
+As a returning user 
+1. I want to just get on and play the game
+
+As an owner
+1. I want to make the game simple for others to play
+1. I want user to know the resuklt at the end of each turn and end of each round.
+
+### FEATURES
+In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+
+
 
 
 ## CONTENTS
@@ -77,38 +116,30 @@ INSERT PALETTE MOSS GREEN AND THE 2 YELLOWS BALCK AND WHITE AND ONE RED
 
 Inkeeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures.  Here is an legend from the Help section of the game :
 
-
-<!-- <div style="text-align:center;"> -->
 ![RPSLS Legend](docs/rpsls-icons.png "Legend")
-<!-- </div> -->
 
-<img style="text-align:center;" src="docs/rpsls-icons.png">
+### Favicon
+I made a simple favicon from the 3 Rock Paper Scissors hand gestures, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon. Here is the favicon : 
 
-I made a simple favicon from the Rock Paper Scissors hand gesture, I decided against adding the Lizard & Spock hand gestures as it got too crowded & difficult to distunguish each icon. Here is the favicon : 
-
-<!-- <p style="background-color: palegoldenrod;","font-color: black">here we go -->
 ![RPSLS favicon](favicon.ico)
-<!-- </p> -->
 
 #### Development Cycle
-As I could not ascertain how long the javascript would take I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the Switch statement in findWinners function. Naming the functions that were needed before starting any code was also great advice from the LMS(Mark).
+I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the `switch` statement in `findWinners` function. Before coding I thought that the RPS game logic would be an good use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Naming the js functions that were needed before starting any code was also great advice from the LMS(Mark). Initally I created the following empty functions 
 
-Before coding I thought that the RPS game logic would be an good use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Initally I created the following empty functions 
+ * `runGame`
+ * `findWinner`
+ * `incrementDeviceWins`
+ * `incrementUserWins`
+ * `incrementDraw`
+ * `displayResults`
 
- * runGame
- * findWinner
- * incrementDeviceWins
- * incrementUserWins
- * incrementDraw
- * displayResults
-
-I did not know at that early stage what parameters (&return) each function would use. During development I added another function 
+I did not know at that early stage what parameters each function would use/return. During development I added another function 
 
  * playAgain
 
- The playAgain is used to give user option replay the game.
+ The `playAgain` is used to give user an option to replay the game.
 
-#### `runGame(userHand)`
+####  `runGame(userHand)` 
 This is the main function of the RPSLS game, It is fired whenever the user clicks on one of the gameButtons (ie Rock, Paper... etc) It takes in the name of the game Button clicked by the user (named `userHand`) & does the following
 
   1. Randomly assign a device option to variable named `deviceHand`
@@ -160,7 +191,7 @@ This function does the following :
   1. Reset dom text : `winorloseTurn roundResults`
 
 
-### winorloseTurn
+### winorloseTurn in index.html
 
 This div is filled with 2 blank lines `<br>` on page load :
 
@@ -176,8 +207,8 @@ Here are some examples
 ![draw](docs/winorloseturn-draw.png)
 
 
-### roundResults
-The game pkays 5 turns to a round, once all 5 truns are taken this 'roundResults' function is called by 'runGame' in order to inform the user the game is finnished and the overall winner and an option to play again.
+### roundResults in index.html
+The game plays 5 turns to a round, once all 5 truns are taken this 'roundResults' function is called by 'runGame' in order to inform the user the game is finnished and the overall winner and an option to play again.
 
 ![win](docs/roundresultswin.png)
 
@@ -188,7 +219,7 @@ The game pkays 5 turns to a round, once all 5 truns are taken this 'roundResults
 
 ### helpButton & helpModal
 
-Clicking on the Help buttons opens the following modal that covers the game foorprint
+Clicking on the Help buttons opens the following modal that covers the game footprint
 
 ![helpModal](docs/helpmodal.png)
 
@@ -221,8 +252,8 @@ However there is different treatment if its the helpButton, in this case when th
         }
       });
   
-  I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp  to display the game instructions/rules on top of the game via a helpButton
-
+  I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp to help with this development.
+  
 
 ### wireframes 
 
@@ -260,13 +291,28 @@ consider person looking at this after u ahs no idea baout the applicaiton
 
 
 No value to be gained by adding a navbar so decided not to include, I have on the advice of my mentor included a footer which contains social media icons and the line that the game is for educational purposes.
+
+## Technologies used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [GitPod](https://gitpod.io/) 
+- [GitHub](https://github.com/)
+- [Am I Responsive](http://ami.responsivedesign.is/) 
+- [Favicon.io](https://favicon.io/favicon-generator/)
+- [Font Awesome](https://fontawesome.com/)
+
 ## CREDITS
 
-RPS rules & diagram courtesy of : https://en.wikipedia.org/wiki/Rock_paper_scissors
-RPSLS rules & diagram courtesy of : https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock
-
-
-How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
+- Referenced articles & sought guidance on the following :
+  * MND https://developer.mozilla.org/en-US/
+  * W3Schools https://www.w3schools.com/
+  * Stack Overflow https://stackoverflow.com/
+  * Code Institute LMS, github templates & Slack Channels
+  * Kevin Powell Channel https://www.youtube.com/@KevinPowell
+- RPS rules & diagram courtesy of https://en.wikipedia.org/wiki/Rock_paper_scissors
+- RPSLS rules & diagram courtesy of https://www.instructables.com/
+- How To Create a Modal Box https://www.w3schools.com/howto/howto_css_modals.asp
 
 ===============================================================================================================
 
@@ -316,7 +362,7 @@ The footer has social media icons and a message that this is an educational page
 center game box on screen
 ## Testing 
 show that u ahve conducted enough test to believe that game works well
-go over features and ebsure they all work as intended
+go over features and be sure they all work as intended
 how does project work on different brpowsers and screen sizes
 
 ### Validator Testing
@@ -355,67 +401,34 @@ In the amiresponsive desktop screenshot there appears to be a faint line under t
 ## Deployment
 
 
-## Credits 
-
-
-
-RPS rules & diagram courtesy of : https://en.wikipedia.org/wiki/Rock_paper_scissors
-RPSLS rules & diagram courtesy of : https://www.instructables.com/How-to-Play-Rock-Paper-Scissors-Lizard-Spock
-
-
-How To Create a Modal Box : https://www.w3schools.com/howto/howto_css_modals.asp
-
-===============================================================================================================
-
-### Content 
-
-### Media
-
-
-## Other General Project Advice
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-
 # List of features
 # UX/UI
 # Testing
-# Deployment & Local Development
 
-### Deployment
 
+## Deployment & Local Development
 The game is deployed using GitHub Pages - 
-
-###### Steps to deploy using github pages 
-Login to Github
-Navigate to the github repo https://github.com/siobhain/rpslsgame
-In the repo, click on the Settings wheel
-Om the left hand side click on Pages 
-From the source dropdown elect the main branch and save, the game is now being deployed & may take a few minutes to eb fully loaded
-The live link can be found here - https://siobhain.github.io/rpslsgame/
+#### Steps to deploy using github pages 
+1. Login to Github
+1. Navigate to the github repo https://github.com/siobhain/rpslsgame
+1. In the repo 
+  * click on the Settings wheel
+  * On the left hand side click on Pages 
+  * From the source dropdown elect the main branch and save, the game is now being deployed & may take a few minutes to be fully loaded
+    * The live link can then be found here https://siobhain.github.io/rpslsgame/
 
 ### Local Development
-
-##### How to fork
-
+#### How to fork
 To fork the repo
+1. Login to Github
+1. Navigate to the github repo https://github.com/siobhain/rpslsgame
+1. Click on the fork dropdown on top righthand side
+1. Click on the +(plus) Create a new repo
 
-Login to Github
-Navigate to the github repo https://github.com/siobhain/rpslsgame
-Click on the fork dropdown on top righthand side
-Click on the +(plus) Create a new repo
-
-##### How to clone
+#### How to clone
 To clone the repo
-
-Login to Github
-Navigate to the github repo https://github.com/siobhain/rpslsgame
-Click on the Code dropdown, In the Local tab Choose one of  HTTPS SSH or GitHub CLI
-Copy the link shown 
-Open the terminal in your code editor and navigate to the location you want to use for the clone
-Type git clone and paste the link/command you copied from GitHub 
-
-
-
-# Citation of ALL sources(code, images, text)
-# Future features 
+1. Login to Github
+1. Navigate to the github repo https://github.com/siobhain/rpslsgame
+1. Click on the Code dropdown, In the Local tab Choose one of  HTTPS SSH or GitHub CLI &  Copy the link/command shown 
+1. Open the terminal in your code editor and navigate to the location you want to use for the clone
+1. Type git clone and paste the link/command 
