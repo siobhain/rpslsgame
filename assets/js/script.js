@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", function () { // When helpbutton clicked, open the popup by setting display=block
         helpModal.style.display = "block";
         //disable game buttons while in help modal, gameButtons are [1] to [5]
-        for (var i = 1; i < 6; i++) {
+        for (let i = 1; i < 6; i++) {
           buttons[i].disabled = true;
         }
       });
@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  let span = document.getElementsByClassName("close")[0];
   // Help Popup : When the user clicks on the large X ie <span> (x), close the popup by setting display=none
   span.onclick = function () {
     helpModal.style.display = "none";
     //enable game buttons when exiting help popup
-    for (var i = 1; i < 6; i++) {
+    for (let i = 1; i < 6; i++) {
       buttons[i].disabled = false;
     }
 
@@ -62,11 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onclick = function (event) {
     if (event.target == helpModal) {
       helpModal.style.display = "none";
-      for (var i = 1; i < 6; i++) {
+      for (let i = 1; i < 6; i++) {
         buttons[i].disabled = false;
       }
     }
-  }
+  };
 }); //end adding listeners etc after DOMcontentLoaded
 
 
@@ -266,7 +266,7 @@ function displayResults() {
 
   //disable game buttons
   let button = document.getElementsByTagName("button");
-  for (var i = 1; i < 6; i++) {
+  for (let i = 1; i < 6; i++) {
     button[i].disabled = true;
   }
 
@@ -297,7 +297,7 @@ This function does the following :
 function playAgain() {
   //helpButton is [0] so traverse [1] to [5] for the 5 gameButtons
   let button = document.getElementsByTagName("button");
-  for (var i = 1; i < 6; i++) {
+  for (let i = 1; i < 6; i++) {
     button[i].disabled = false;
   }
   document.getElementById("turn").innerText = "0";
