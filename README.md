@@ -179,7 +179,7 @@ Here are some examples
 ### roundResults
 The game pkays 5 turns to a round, once all 5 truns are taken this 'roundResults' function is called by 'runGame' in order to inform the user the game is finnished and the overall winner and an option to play again.
 
-![win](docs/rounrResultswin.png)
+![win](docs/roundresultswin.png)
 
 ![lose](docs/roundresultslose.png)
 
@@ -187,7 +187,11 @@ The game pkays 5 turns to a round, once all 5 truns are taken this 'roundResults
 
 
 ### helpButton & helpModal
-ASDFGHJKLJHGFDSASDFGHJKJHGFDS
+
+Clicking on the Help buttons opens the following modal that covers the game foorprint
+
+![helpModal](docs/helpmodal.png)
+
 
 #### EventListeners
 Once DOM is loaded add eventlisteners &/or handle specific user actions.
@@ -300,13 +304,13 @@ The 5 buttons are displayed on a grid with automatic column sizes for each butto
 
 All 5 gameButtons are white background with black font detailing both the icon and the name of the hand gesture.  The icon is double the font-size (at 2em) than the name underneath. The button corners are rounded slightly with a border-radius of 0.5em. On hover the background changes to a soft yellow color (a shade darker than the game background color) & alerts the user that it can be clicked. Once the Dom is loaded js adds a 'click' eventListener to each of these ganeButtons.  
 
-
-
-
-how did u make favicon
 ### Existing Features
 
-- __The Footer__ 
+#### Footer
+The footer has social media icons and a message that this is an educational page.
+
+![footer](docs/footer.png)
+
 
 ### Future Features
 center game box on screen
@@ -323,7 +327,31 @@ js
 
 ### Unfixed Bugs
 
-wanted to hide the scoreboard at game start but could not get it wokring as get NaN when tried n ran outta time to investigate
+
+#### hidden element
+I wanted to hide the scoreboard (`id=score-area`) at game start but could not get it working.  I first ran into problem trying to read the value of an element that was 'visibility: hidden' with 
+
+    let oldTurn = parseInt(document.getElementById("turn").innerText);
+
+ which would eventually lead to `NaN` when tried to increment the `oldTurn`. Eventually I found that using `innerHTML` rather than `innerText` solved this problem. However the real problem came when I tried to check if the element was hidden with this little if statement
+
+    let scorearea = document.getElementById("score-area");
+
+    if (scorearea.style.visibility === 'hidden') {
+            scorearea.style.visibility = 'visible';
+    }
+
+  I had tried it out in W3Schools tryit ASP & it  all worked perfectly fine but I could not get it to work within my game.  I changed `score-area` from `Class` to `Id`, I tried different html tags such as `<div> & <section>` & numerous console logs. Even this simple alert was blank
+
+      alert(document.getElementById("score-area").style.visibility);
+
+  
+Alas, reluctantly I've had to leave the score-area visible on page load otherwise this README would be incomplete. (of coarse itching to get back to it)
+ 
+#### FAINT LINE  
+In the amiresponsive desktop screenshot there appears to be a faint line under the `<h1>` header RPSLS Game. There is an even fainter line under the `<h2>` tagline. I do not have any borders, margin, outlines on either of these elements so I do not know where these lines are coming from. I'm not even sure if this is a bug or a sympton of simulation as they are not visible on live site.
+
+
 ## Deployment
 
 
@@ -378,7 +406,6 @@ Click on the fork dropdown on top righthand side
 Click on the +(plus) Create a new repo
 
 ##### How to clone
-
 To clone the repo
 
 Login to Github
