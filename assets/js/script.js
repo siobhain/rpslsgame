@@ -17,7 +17,7 @@
   rules/instructions) so listeners needed for these buttons.
   
   I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp
-  to help display the game instructions/rules on top of the game via a helpButton
+  to help display the game instructions/rules on top of the game fired via the helpButton
 
 */
 
@@ -285,6 +285,12 @@ function displayResults() {
 } //end displayResults
 
 /* function playAgain()
+
+  Note re unused variable playAgain:
+  JSHint complains playAgain is an unused variable
+  This is because this function is called via an 'onclick' from html 
+  I should instead setup eventListener for this button
+
 This function is fired once the user hits the "Play Again" button
 The "Play Again" button is presented to the user by displayResults()
 displayResulta is called after a round of 5 turns is complete

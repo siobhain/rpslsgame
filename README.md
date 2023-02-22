@@ -296,6 +296,7 @@ No value to be gained by adding a navbar so decided not to include, I have on th
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) 
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Javascript Visualizer](https://pythontutor.com/visualize.html#mode=edit)
 - [GitPod](https://gitpod.io/) 
 - [GitHub](https://github.com/)
 - [Am I Responsive](http://ami.responsivedesign.is/) 

@@ -18,16 +18,16 @@
     <header>
         <h1>R P S L S Game</h1>
         <h2>
-            <span><i class="fa-regular fa-hand-back-fist"></i>Rock&nbsp&nbsp</span>
-            <span><i class="fa-regular fa-hand"></i>Paper&nbsp&nbsp</span>
-            <span><i class="fa-regular fa-hand-scissors"></i>Scissors&nbsp&nbsp</span>
-            <span><i class="fa-regular fa-hand-lizard"></i>Lizard&nbsp&nbsp</span>
-            <span><i class="fa-regular fa-hand-spock"></i>Spock&nbsp&nbsp</span>
+            <span><i class="fa-regular fa-hand-back-fist"></i>Rock&nbsp; &nbsp;</span>
+            <span><i class="fa-regular fa-hand"></i>Paper&nbsp; &nbsp;</span>
+            <span><i class="fa-regular fa-hand-scissors"></i>Scissors&nbsp; &nbsp;</span>
+            <span><i class="fa-regular fa-hand-lizard"></i>Lizard&nbsp; &nbsp;</span>
+            <span><i class="fa-regular fa-hand-spock"></i>Spock&nbsp; &nbsp;</span>
         </h2>
         <!-- There is no nav bar in this game as it is only a one page game presentation -->
     </header>
     <main>
-        <section class="game-area"> <!-- Along with the header this is the footprint for the game -->
+        <div class="game-area"> <!-- Along with the header this is the footprint for the game -->
             <div>
                 <span>
                     <button id="helpButton" data-type="helpButton">Help</button>
@@ -64,7 +64,7 @@
             <div id="roundResults"><br><br></div>
             <!-- js will write the result of the round in here from the displayResults function & present the playAgain button :getElementById("roundResults").innerHTML = `${roundResult} -->
 
-            <section id="score-area">
+            <div id="score-area">
                 <div>
                     Turn<br>
                     <!-- There are 5 turns per round, round is finished when this counter reaches 5, it is then reset to 0-->
@@ -83,7 +83,7 @@
                     Device<br> <!-- This counter tracks the number of device wins per roiund -->
                     <span id="device">0 </span>
                 </div>
-            </section> <!-- close score-area -->
+            </div> <!-- close score-area -->
 
             <footer>
                 <!-- footer with social media icons pointing to home pages as no social media accounts for this game -->
@@ -105,7 +105,7 @@
                     <p>THIS GAME IS FOR EDUCATIONAL PURPOSES ONLY THERE ARE NO SOCIAL MEDIA ACCOUNTS</p>
                 </div>
             </footer>
-        </section> <!-- close game-area -->
+        </div> <!-- close game-area -->
 
         <!-- The Help Modal -->
         <div id="helpModal">
