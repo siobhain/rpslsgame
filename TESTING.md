@@ -1,21 +1,43 @@
 <h1> Testing For RPSLS Game </h1>
 
-![amiresponsive](docs/amir.png)
+![amiresponsive](docs/amirorange.png)
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-  - [User Story Testing](#story-testing)
+  - [Unit Tests](#pre-testing)
+  - [User Story Testing](#user-story-testing)
+  - [Feature Testing](#device-testing)
   - [Browser Testing](#browser-testing)
-  - [Device Testing](#device-testing)
   - [Validator Testing](#validator-testing)
   - [Lighthouse Testing](#lighthouse-testing)
   - [Accessibility Testing](#accessibility-testing)
 
-<hr>
+---
+
+### Unit Tests
+In this project when i mention unit tests I am referring to the small independent piece of code or function that mimics on a small scale what I am trying to add to the game. So I carried out several unit tests in HTML,CSS & JS on multiple platforms such as the LMS Runnable example, W3Schools Try it, Python/JS Tutor & gitpod cli in order to get to speed & try out new code constructs/ideas before incorporating into the actual game. It was great to have so many learning resources to hand. 
+
+In addition these manual test were repeatively carried out whenever a new piece of functionality was added or changes need to be made to clear errors/warnings or for best practise.
+
+|Test|Description|
+|-----|-----|
+|gameButtons| Each game button Rock, Paper...etc was clicked to check listener was working|
+|Counters| The 4 counters, turn win lose draw checked that they are operating as expected|
+|Turn Results|Check that each turn is generating the correct results, ie the correct case out of a possible 20 is selected & correct turn results presented to screen|
+|Round results|Check that the final results at the end of the round is as it should be|
+|Help button| Check that this button opens the help modal correctly
+|Help close|  Checl that clicking on the xlose "X" on the help modal will close it and retuen to the game
+|Click outside modal| Check that the helpmodal is closed|
+
+Responsive Tests
+I used google dev tools to check for responsiviness on screen width sizes from 320px mobile size to 1600px desktop size. The game was build mobile first, It has a very small footprint. Hence I had the luxury of only having to be concerned with width, there are no settings for height.
+
+
 
 Feature | Expected Result | Pass/Fail
-### User Story Testing
 
+
+### User Story Testing
 #### First Time User
 
 |User Story | Test | Expected Result| Actual|
@@ -39,44 +61,41 @@ Feature | Expected Result | Pass/Fail
 |I want user to know the result at the end of each round|Play a round|The round results are displayed on screen|PASS|
 
 ---
-<hr>
 
-#### Features not in user stories
+### Features
 
 |Feature | Expected Result | Actual|
 |-----|-----|-----|
 |gameButtons disabled when round finishes|Game Buttons not cluickable & visibly disabled when round results are displayed|PASS|
 |gameButton disabled when Help modal invoked|Defunct Feature since helpModal now covers majority of game footprint & gameButtons are no longer visible when helpModal is displayed|n/a|
 
-
-
+---
 
 ## Browser Testing 
-|Browser  | Result
-|---------------|---------------
-|Chrome | Works as expected
-|Firefox | Works as expected
-|Microsoft Edge | Works as expected
+|Browser  | Result|
+|---------------|---------------|
+|Chrome | Works as expected|
+|Firefox | Works as expected|
+|Microsoft Edge | Works as expected|
 
-<hr>
+---
 
 ## Validator Testing
 
 |Test Type | Result | Comment|
-|----------|----------------|-----|
-W3C HTML Validator | ![W3C Result](docs/htmlvalidator.png) | In order to clear errors/warnings I had to change all `<section>` elements to `<div>` I do not have any headers within the game body elements, I have meangingful class and Id names but did not require heaI know this will effect 
-W3C CSS Validator | ![css-result](docs/w3ccssvalidator.png) | n/a
-JShint JavaScript Validator | ![js-result](docs/jshint.png) **Warnings** at line 35 & line 43, these are both in the area where I am setting up listeners on page load In both cases I am setting up a function to be invoked on 'click' of a button, the variables used inside these function are used elsewhere within the "page load" setup hence the warning, Since the game itself is not too complicated as variables are defined just a couple of lines above being used I think in this case it is acceptable & will not lead to confusion 
-|JsHint continued|"|There is **unused variable `playAgain`**, This is a function that is called from the html, It would be better to have an eventListener for this button 'click' function but time does not allow me to adjust this before submission
-<hr>
+|----------|:-----------:|-----|
+W3C HTML Validator | ![W3C Result](docs/htmlvalidator.png) | In order to clear errors/warnings with this validator I had to change all `<section>` elements to `<div>` I do not have any headers within the game body elements, I have meangingful Class and Id names but did not require header in the likes of game-area score-area, Using div's & spans combined with lack of a nav bar point to poor scemantic markup on this site but it is such a small & simple game/site that it is probably not a major problem. I did include a footer but it is more as a semantic element rather than adding any value to the game. I intend to replace the scoial media icons on the footer with the tagline (the h2 in header) in order to imporve value of footer but not going to be done before submission.| 
+|W3C CSS Validator | ![css-result](docs/w3ccssvalidator.png) | n/a|
+|JShint JavaScript Validator | ![js-result](docs/jshint.png) |**Warnings** at line 35 & line 43, these are both in the area where I am setting up listeners on page load In both cases I am setting up a function to be invoked on 'click' of a button, the variables used inside these function are used elsewhere within the "page load" setup hence the warning, Since the game itself is not too complicated as variables are defined just a couple of lines above being used I think in this case it is acceptable & will not lead to confusion |
+|JsHint continued|"|There is **unused variable `playAgain`**, This is a function that is called from the html, It would be better to have an eventListener for this button 'click' function but time does not allow me to adjust this before submission|
+---
 
 ## Lighthouse Testing
 
 |From  | Result|
 |-------|-------|
-|Desktop| ![desktop-lighthouse](docs/lighthousedesktop.png)|
-
-<hr>
+|Desktop| ![lighthouse](docs/lighthousedesktop.png)|
+|Mobile| ![lighthouse](docs/lighthousemobile.png)|
 
 ## Accessibility Testing
 
@@ -88,3 +107,4 @@ JShint JavaScript Validator | ![js-result](docs/jshint.png) **Warnings** at line
 |:-------:|-------|
 |![wave-alert](docs/wavealerts.png) |Alert : `<noscript>`** but in the case of a browser not supporting js on this site the actual text content is accessible so I don't think there is need for an `aria label`.|
 |"|Second alert is for the legend table in the helpModal as I do not ahve a `table head`. I purposely removed the `thead` several commits back as I did not see its value, its self explanatory what the table is in fact I probably should just have made this a `list` element!|
+---

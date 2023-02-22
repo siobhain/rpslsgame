@@ -1,23 +1,22 @@
 
 # ![logo](favicon.ico) RPSLSGame
 
-![amiresponsive](docs/amir.png)
+![amiresponsive](docs/amirfirefox.png)
 
 Live Site : https://siobhain.github.io/rpslsgame/
 
 # ![logo](favicon.ico) Introduction to RPSLSGame
 
-RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock Game. It is targeted at the person who needs to make a simple snap decision (like where to go for lunch) when they are probably on their own without a coin to flip. They play against the device running the game. The game starts when one of the 5 hand gestures is clicked.  The user can play just one turn or play a round of 5 turns and will be advised of win lose or draw at the end of each turn and round. Here is a screenshot of the home page
+RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock Game. It is targeted at the person who needs to make a simple snap decision (like where to go for lunch) when they are probably on their own without a coin to flip. The person plays against the computer/device. The game starts when one of the 5 button (hand gestures) is clicked.  The user can play just one turn or play a round of 5 turns and will be advised of win, lose or draw at the end of each turn and round. Here is a screenshot of the starting page from a 375px wide screeen mobile :
 
-
-![RPSLSGame homepage](docs/homepage.png)
+![RPSLSGame homepage](docs/startgame375px.png)
 
  The game may also interest people who are starting to learn javascript and want to see how it can manipulate the DOM. 
 
 ---
 ***
 ## Background Information
-This section contains information about these two hand gesture games in case you have not come across them
+This section contains information about these hand gesture games in case you have not come across them.
 
 ### Rock Paper Scissors
 In this hand gesture game of chance each player will simultaneously form one of 3 shapes with their hand which are either -
@@ -28,8 +27,7 @@ In this hand gesture game of chance each player will simultaneously form one of 
 
 The game has three possible outcomes: win lose or draw according to this triangular diagram :
 
-![RPS Diagram](docs/rps.png)
-
+![RPS Diagram](docs/rps.png) 
 ### Rock Paper Scissors Lizard Spock
 
 This game first appeared in the American TV show The big bang theory & is a variation of the Rock Paper Scissors game with the addition of 2 more hand gestures - yep you have guessed it Lizard & Spock
@@ -38,9 +36,11 @@ This game first appeared in the American TV show The big bang theory & is a vari
 * form the hand into a sockpuppet-like mouth - **Lizard**
 
 
-Again the game has three possible outcomes:  win lose or draw according to this slightly mnore complicated triangular diagram below :
+Again the game has three possible outcomes:  win lose or draw according to the ( slightly more complicated) triangular diagram below - simplified by the Rules table from the Help area.  Basically each hand gesture can beat 2 other hand gestures and can be beaten by 2 hand gestures - It totally a game of chance!
 
-![RPSLS Diagram](docs/rpsls.jpeg)
+![RPSLS Diagram](docs/rpsls.jpeg) ![Rules Table](docs/rulestable.png)
+
+
 ---
 ***
 
