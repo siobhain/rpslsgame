@@ -59,7 +59,7 @@ As a returning user
 
 As an owner
 1. I want to make the game simple for others to play
-1. I want user to know the resuklt at the end of each turn and end of each round.
+1. I want user to know the result at the end of each turn and end of each round.
 
 ### FEATURES
 In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
@@ -291,6 +291,10 @@ consider person looking at this after u ahs no idea baout the applicaiton
 
 
 No value to be gained by adding a navbar so decided not to include, I have on the advice of my mentor included a footer which contains social media icons and the line that the game is for educational purposes.
+
+# Testing
+Testing document can be found [here](TESTING.md)
+
 
 ## Technologies used
 
