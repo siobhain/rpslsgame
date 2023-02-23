@@ -1,12 +1,9 @@
-<h1> Testing For RPSLS Game </h1>
+![amiresponsive on https://amiresponsive.co.uk/](docs/amirorange.png "Simulation from https://amiresponsive.co.uk/, Here you can see the mobile render does not have a scroll bar as is evident in the mobile render on the README.md header")
 
-![amiresponsive](docs/amirorange.png)
-
-# Table of Contents
-- [Table of Contents](#table-of-contents)
-  - [Unit Tests](#pre-testing)
-  - [User Story Testing](#user-story-testing)
-  - [Feature Testing](#device-testing)
+# Testing for RPSLS Game
+  - [Unit and Manual Tests](#unit)
+  - [User Story Testing](#user)
+  - [Feature Testing](#feature)
   - [Browser Testing](#browser-testing)
   - [Validator Testing](#validator-testing)
   - [Lighthouse Testing](#lighthouse-testing)
@@ -14,10 +11,10 @@
 
 ---
 
-### Unit Tests
-In this project when i mention unit tests I am referring to the small independent piece of code or function that mimics on a small scale what I am trying to add to the game. So I carried out several unit tests in HTML,CSS & JS on multiple platforms such as the LMS Runnable example, W3Schools Try it, Python/JS Tutor & gitpod cli in order to get to speed & try out new code constructs/ideas before incorporating into the actual game. It was great to have so many learning resources to hand. 
+## Unit and Manual Tests <a name="unit"></a>
+In this project when I mention unit tests I am referring to testing a small independent piece of code or function that mimics what I am trying to add to the game. So I carried out several unit tests in HTML, CSS & JS on multiple platforms such as the LMS Runnable example, W3Schools Try it, Python/JS Tutor & gitpod cli in order to get to speed & try out new code constructs/ideas before incorporating into the actual game. It was great to have so many learning resources to hand. 
 
-In addition these manual test were repeatively carried out whenever a new piece of functionality was added or changes need to be made to clear errors/warnings or for best practise.
+In addition the following manual test were repeatively carried out whenever a new piece of functionality was added or changes were made to clear errors/warnings or for best practise.
 
 |Test|Description|
 |-----|-----|
@@ -29,16 +26,11 @@ In addition these manual test were repeatively carried out whenever a new piece 
 |Help close|  Checl that clicking on the xlose "X" on the help modal will close it and retuen to the game
 |Click outside modal| Check that the helpmodal is closed|
 
-Responsive Tests
+### Responsive Tests
 I used google dev tools to check for responsiviness on screen width sizes from 320px mobile size to 1600px desktop size. The game was build mobile first, It has a very small footprint. Hence I had the luxury of only having to be concerned with width, there are no settings for height.
 
-
-
-Feature | Expected Result | Pass/Fail
-
-
-### User Story Testing
-#### First Time User
+## User Story Testing <a name="#user"> </a>
+### First Time User
 
 |User Story | Test | Expected Result| Actual|
 |---------------|-----------------|---------------|---|
@@ -46,13 +38,13 @@ Feature | Expected Result | Pass/Fail
 |I want to play the game so I can see if I can beat the computer | Start clicking the game buttons to play a round & play 5 rounds| You win some rounds, You lose some rounds, You may draw|PASS|
 |I want to know each time I take a turn who wins the turn and what did the computer pick|Click on a gameButton|Turn results are displayed on the screen telling user what the device placed & if they won or lsoe this turn, also note that the counters are updated|PASS|
 
-#### Returning User
+### Returning User
  
 |User Story | Test | Expected Result|Actual|
 |---------------|-----------------|---------------|----|
 |I want to just get on and play the game|Start ckicking on the gameButtons and play 5 turns to complete a round|The turn results are displayed on screen as each turn is taken and the rouns results are displayed at the ned of the round wqith the option to Play Again|PASS|
 
-#### Owner User Stories
+### Owner User Stories
  
 |User Story | Test | Expected Result|Actual|
 |---------------|-----------------|---------------|----|
@@ -62,7 +54,7 @@ Feature | Expected Result | Pass/Fail
 
 ---
 
-### Features
+## Feature <a name="feature"></a>
 
 |Feature | Expected Result | Actual|
 |-----|-----|-----|

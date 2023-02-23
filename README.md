@@ -1,7 +1,7 @@
 
 # ![logo](favicon.ico) RPSLSGame
 
-![amiresponsive](docs/amirfirefox.png)
+![amiresponsive simulation ](docs/amirfirefox.png "Simulation from https://ui.dev/amiresponsive of how RPSLSGame looks on various screens, Be aware that the mobile render shown here has a scroll bar but this would not occur on real device, Here the mobile viewport is set to 320px wide X 480px high but normally mobile height is > 640px & RPSLSGame occupies 617px high on a 320px wide screen, You can see a more favourible simulation on the TESTING.md header")
 
 Live Site : https://siobhain.github.io/rpslsgame/
 
@@ -13,6 +13,16 @@ RPSLSGame is a javascript implementation of the Rock Paper Scissors Lizard Spock
 
  The game may also interest people who are starting to learn javascript and want to see how it can manipulate the DOM. 
 
+---
+Contents 
+- Background Information
+- UX/UI Section
+- Features
+- Testing
+- Bugs / Difficulties encountered
+- Deployment & Local Development
+- Technologies used
+- CREDITS
 ---
 ***
 ## Background Information
@@ -44,11 +54,11 @@ Again the game has three possible outcomes:  win lose or draw according to the (
 ---
 ***
 
+## UX/UI Section
 
-* [User Experience](#user-experience-ux)
-  * [User Stories](#user-stories)
-  
+It a pretty simple game so I decided for very simple lines in presentation of this game,  I wanted to spend the majority of time and effort on javascript (js).  I started with basic html/css layout with placeholder div/spans etc for the data js exchanges with the DOM I used gaudy colors in the development/test stage to make it easier to identify counters etc but all these removed once js finished & before final deployment. 
 
+### User Stories   
 As a first time user
 1. I want to find out about this game so I can have a go at it
 1. I want to play the game so I can see if I can beat the computer
@@ -61,60 +71,11 @@ As an owner
 1. I want to make the game simple for others to play
 1. I want user to know the result at the end of each turn and end of each round.
 
-### FEATURES
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+### Fonts Icons & Colors
+I chose the google font **Roboto** for its clear lines and ease of readability.
+I chose 2 pale colors yellow and green so as not to distract user from the game, Buttons are then highlighted by white background & by a soft yellow on hover.  The close X on the helpModal is colored red on hover so as to alert the user. Unfortunately I've been unable to generate a palette.
 
-
-
-
-## CONTENTS
-
-* [User Experience](#user-experience-ux)
-  * [User Stories](#user-stories)
-
-* [Design](#design)
-  * [Colour Scheme](#colour-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
-  * [Wireframes](#wireframes)
-
-* [Features](#features)
-  * [General Features on Each Page](#general-features-on-each-page)
-  * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
-
-* [Technologies Used](#technologies-used)
-  * [Languages Used](#languages-used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
-
-* [Deployment & Local Development](#deployment--local-development)
-  * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
-
-* [Testing](#testing)
-
-* [Credits](#credits)
-  * [Code Used](#code-used)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgments](#acknowledgments)
-
-
-
-## UX/UI Section
-### Intention of this game, explain goal of game
-### design choices font colors
-It a pretty simple game so I decided for very simple lines in presentation of this game,  I wanted to spend the majority of time and effort on javascript (js).  I started with basic html/css layout with placeholder div/spans etc for the data js exchanges with the DOM I used gaudy colors in the development/test stage to make it easier to identify counters etc but all these removed once js finished & before final deployment. 
-
-#### Fonts Icons & Colors
-I chose the google font Roboto for its clear lines and east of readability
-I chose small palette of pale colors so as not to distract user from the game.
-
-INSERT PALETTE MOSS GREEN AND THE 2 YELLOWS BALCK AND WHITE AND ONE RED
-
-Inkeeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures.  Here is an legend from the Help section of the game :
+In keeping with the simplicity of the game I chose to use fontawesome icons for the game hand gestures.  Here is an legend from the Help section of the game :
 
 ![RPSLS Legend](docs/rpsls-icons.png "Legend")
 
@@ -123,7 +84,18 @@ I made a simple favicon from the 3 Rock Paper Scissors hand gestures, I decided 
 
 ![RPSLS favicon](favicon.ico)
 
-#### Development Cycle
+
+### Semantic HTML
+ There was no value to be gained by adding a navbar so decided not to include. I did need to change `section` elements to `div` elements in the html body in order to pass validation as I do not use `header` elements in the `section`.  I have on the advice of my mentor included a footer which contains social media icons and   the line that the game is for educational purposes. 
+
+### wireframes 
+
+This wireframe drawn up early in process before any coding done & caters for just one turn of the game.  Of coarse the game devloped on implementation and I added turns and rounds.
+
+![rpsls wireframe](docs/rpsls-wireframe.png)
+
+
+### Development Cycle
 I started with the simplier Rock Paper Scissors game with the intention to get that working before I added the complications of Lizard & Spock. This worked out well - in fact adding Lizard & Spock resulted in additions only to the `switch` statement in `findWinners` function. Before coding I thought that the RPS game logic would be an good use case for Switch/Case statements so that was always in my head when deciding what js functions were needed. Naming the js functions that were needed before starting any code was also great advice from the LMS(Mark). Initally I created the following empty functions 
 
  * `runGame`
@@ -219,12 +191,14 @@ The game plays 5 turns to a round, once all 5 truns are taken this 'roundResults
 
 ### helpButton & helpModal
 
-Clicking on the Help buttons opens the following modal that covers the game footprint
+Clicking on the Help buttons opens the following modal that covers the game footprint, leaving only some of the heading visible to the user.
 
 ![helpModal](docs/helpmodal.png)
 
+Here you can observe on the Rules table I tried to distinguish the rule pairs with the shading on every 2 rows and I also right aligned the non shaded rows foe quick identification.
 
-#### EventListeners
+
+### EventListeners
 Once DOM is loaded add eventlisteners &/or handle specific user actions.
 
   There are 5 gameButtons (for Rock, Paper...etc) & a helpButton (which fires popup modal for game instructions) so listeners are needed for a `click` action to each of these buttons.
@@ -240,7 +214,6 @@ When any of the gameButtons are clicked the `runGame` function is invoked
           runGame(userHand); 
           }
 
-
 However there is different treatment if its the helpButton, in this case when the helpButton is clicked I want to invoke the modal by setting the `display` attribute to `block` & that along with CSS z-index=1 will ensure it appears on top of the game
 
     if (button === helpButton) {
@@ -253,95 +226,33 @@ However there is different treatment if its the helpButton, in this case when th
       });
   
   I have used a modal from w3schools https://www.w3schools.com/howto/howto_css_modals.asp to help with this development.
-  
 
-### wireframes 
+---
+***
 
-![rpsls wireframe](docs/rpsls-wireframe.png)
+ 
+## Features
 
-User Stories & Acceptance Criteria
-A US is an informal general explanation of a software feature written from the prespective of an end use, its purpose is to articulate how a how s/w feature will provide value to the customer
-as per Daisy McGitt in S/W test webinar
-Format of a user story
-As a <who> I want to <what> so that I can <why>
-Acceptance Criteris - happy path is way it normally works and alternative sometime referred to as sad path ...ie user put in incorrect data 
+### Game footprint
 
-As a first time user
-I want to find out about this game so I can have a go at it
-I want to play the game so i can see if I can beat the computer
-I want to know each time i take a turn who wins the turn and what did the computer pick
+Please take game footprint to mean both the header and body sections of html, both have the same background-color of pale yellow. The area outside of the game footprint is coloured a pale moss green.  The game was developed mobile first as this is the device game will mostly be played on & to cut down on the amount of media queries.  
 
-#
-
-As a returning user 
-I want to just get on and play the game
-
-As an owner
-I want to make the game intresting and simple for others to play
-
-user feedback
-I want users to knwo the result at the end of each turn and end of each round.
-
-
-Type of tests
-unit test
-systems test - evaluate the entire application
-regression test - rerun non functional test, like when new functionality added it caused side effects and broke something else  
-consider person looking at this after u ahs no idea baout the applicaiton
-
-
-No value to be gained by adding a navbar so decided not to include, I have on the advice of my mentor included a footer which contains social media icons and the line that the game is for educational purposes.
-
-# Testing
-Testing document can be found [here](TESTING.md)
-
-
-## Technologies used
-
-- [HTML5](https://en.wikipedia.org/wiki/HTML5) 
-- [CSS3](https://en.wikipedia.org/wiki/CSS)
-- [Javascript Visualizer](https://pythontutor.com/visualize.html#mode=edit)
-- [GitPod](https://gitpod.io/) 
-- [GitHub](https://github.com/)
-- [Am I Responsive](http://ami.responsivedesign.is/) 
-- [Favicon.io](https://favicon.io/favicon-generator/)
-- [Font Awesome](https://fontawesome.com/)
-
-## CREDITS
-
-- Referenced articles & sought guidance on the following :
-  * MND https://developer.mozilla.org/en-US/
-  * W3Schools https://www.w3schools.com/
-  * Stack Overflow https://stackoverflow.com/
-  * Code Institute LMS, github templates & Slack Channels
-  * Kevin Powell Channel https://www.youtube.com/@KevinPowell
-- RPS rules & diagram courtesy of https://en.wikipedia.org/wiki/Rock_paper_scissors
-- RPSLS rules & diagram courtesy of https://www.instructables.com/
-- How To Create a Modal Box https://www.w3schools.com/howto/howto_css_modals.asp
-
-===============================================================================================================
-
-## Features should incl Name, Description, how it works, screenshot, value to the user
-
-#### Game footprint
-
-Please take game footprint to mean both the header and body sections of html, both have the same background-color of pale yellow. The area outside of the game footprint is coloured a pale moss green.
-
-WIDTH
+#### WIDTH
 RPSLS is a small game, it does not need much screen space. However, concerning the screen width, I did not want to have to use several media queries to cater for different screen widths. On mobile for example I want to make use of most of the width but once width get to approx 500px that plenty size for the game so I want to cap game width at 500px.  I used the width: min(500px, 90%).  I did succumb to one media query for screens > 1000px and increased the width to 800px.  
 
-POSITION
-The game is centered horizontally.I set padding at the top of the game footprint to be 5vh, which will be 5% of the viewport height, this is adequate for small screen devices but on larger screen it would be better to center the game in the screen but given time constraints I settled with 20% viewport padding (20vh) on screens wider than 1000px.
+#### POSITION & HEIGHT
+The game is centered horizontally. I set padding at the top of the game footprint to be 5vh, which will be 5% of the viewport height, this is adequate for small screen devices but on larger screen it would be better to center the game in the screen but given time constraints I settled with 20% viewport padding (20vh) on screens wider than 1000px.  The game takes just under 620px in height but I did not set this at all allowing the browser to cater in responsive manner.
 
+#### Responsive
+I do believe the game is fully responsive, I purposely did not clamp the height. (NEEDS TO BE EXPLAINED FURTHER)
 
-#### Header
+### Header
 
-The header section is made up of a H1 Name & H2 tagline.  H1 contains shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game.  The subheader in H2 is considered the tag line, It contains the icon & name, both are contained in a span with {white-space: nowrap} so they are presented as a pair when the browser needs to render the H2 tagline onto 2nd/3rd line. Also made use of two &nbsp to ensure adequate separation from next/previous item.  These efforts are an attempt to get user used to the icons used for each hand gesture.
-
+The header section is made up of a H1 Name & H2 tagline.  H1 contains shorthand for the name of the game using the 1st letter of each hand gesture Rock Paper Scissors Lizard Spock, so RPSLS Game.  The subheader in H2 is considered the tag line, It contains the icon & name, both are contained in a span with {white-space: nowrap} so they are presented as a pair when the browser needs to render the H2 tagline onto 2nd/3rd line. Also made use of two &nbsp to ensure adequate separation from next/previous item.  These efforts are an attempt to get user used to the icons used for each hand gesture.  It took a lot of time to finalise the tag line so it appears good on all screen widths (even with 2 and 3 lines breaks) as there were times when the icon was breaking with the icon name so its good now to have them stuck together as it were.
 
 ![RPSLS Header](docs/header.png)
 
-#### Game Buttons
+### Game Buttons
 These are the 5 hand gestures that are central to the game, below is a screenshot from desktop 
 
 ![RPSLS Desktop gameButtons](docs/gamebuttonsdesktop.png)
@@ -352,34 +263,30 @@ These are the 5 hand gestures that are central to the game, below is a screensho
 
 The 5 buttons are displayed on a grid with automatic column sizes for each button, The 5 buttons fit on screen from 300px 
 
-
 All 5 gameButtons are white background with black font detailing both the icon and the name of the hand gesture.  The icon is double the font-size (at 2em) than the name underneath. The button corners are rounded slightly with a border-radius of 0.5em. On hover the background changes to a soft yellow color (a shade darker than the game background color) & alerts the user that it can be clicked. Once the Dom is loaded js adds a 'click' eventListener to each of these ganeButtons.  
 
-### Existing Features
-
-#### Footer
+### Footer
 The footer has social media icons and a message that this is an educational page.
 
 ![footer](docs/footer.png)
 
-
 ### Future Features
-center game box on screen
-## Testing 
-show that u ahve conducted enough test to believe that game works well
-go over features and be sure they all work as intended
-how does project work on different brpowsers and screen sizes
+- Center the game box on  all screens
+- Let user enter number of turns per round, numnber of rounds to play, leaderboard?
+- For accessibility I could add audio to the game announcing what hand gesture the device has chosen and who the winner is etc
 
-### Validator Testing
-html W3C validator
-css jigsaw
-js
+---
+***
 
+## Testing
+Testing document can be found [here](TESTING.md)
 
-### Unfixed Bugs
+---
+***
 
+## Bugs / Difficulties encountered
 
-#### hidden element
+### hidden element
 I wanted to hide the scoreboard (`id=score-area`) at game start but could not get it working.  I first ran into problem trying to read the value of an element that was 'visibility: hidden' with 
 
     let oldTurn = parseInt(document.getElementById("turn").innerText);
@@ -399,17 +306,11 @@ I wanted to hide the scoreboard (`id=score-area`) at game start but could not ge
   
 Alas, reluctantly I've had to leave the score-area visible on page load otherwise this README would be incomplete. (of coarse itching to get back to it)
  
-#### FAINT LINE  
+### FAINT LINE  
 In the amiresponsive desktop screenshot there appears to be a faint line under the `<h1>` header RPSLS Game. There is an even fainter line under the `<h2>` tagline. I do not have any borders, margin, outlines on either of these elements so I do not know where these lines are coming from. I'm not even sure if this is a bug or a sympton of simulation as they are not visible on live site.
 
-
-## Deployment
-
-
-# List of features
-# UX/UI
-# Testing
-
+---
+***
 
 ## Deployment & Local Development
 The game is deployed using GitHub Pages - 
@@ -437,3 +338,31 @@ To clone the repo
 1. Click on the Code dropdown, In the Local tab Choose one of  HTTPS SSH or GitHub CLI &  Copy the link/command shown 
 1. Open the terminal in your code editor and navigate to the location you want to use for the clone
 1. Type git clone and paste the link/command 
+
+---
+***
+
+## Technologies used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Javascript Visualizer](https://pythontutor.com/visualize.html#mode=edit)
+- [GitPod](https://gitpod.io/) 
+- [GitHub](https://github.com/)
+- [Am I Responsive](http://ami.responsivedesign.is/) 
+- [Favicon.io](https://favicon.io/favicon-generator/)
+- [Font Awesome](https://fontawesome.com/)
+
+---
+***
+## CREDITS
+
+- Referenced articles & sought guidance on the following :
+  * MND https://developer.mozilla.org/en-US/
+  * W3Schools https://www.w3schools.com/
+  * Stack Overflow https://stackoverflow.com/
+  * Code Institute LMS, github templates & Slack Channels
+  * Kevin Powell Channel https://www.youtube.com/@KevinPowell
+- RPS rules & diagram courtesy of https://en.wikipedia.org/wiki/Rock_paper_scissors
+- RPSLS rules & diagram courtesy of https://www.instructables.com/
+- How To Create a Modal Box https://www.w3schools.com/howto/howto_css_modals.asp
